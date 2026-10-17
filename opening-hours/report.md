@@ -187,7 +187,7 @@ cd opening-hours
 python hours.py
 ```
 
-The data file is found automatically in `../staffing-forecast/data/`. The run takes about 5 seconds.
+The data file is read from the repo's top-level `data/` folder. The run takes about 5 seconds.
 
 | Output | Content |
 |---|---|

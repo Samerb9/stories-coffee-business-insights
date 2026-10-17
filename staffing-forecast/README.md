@@ -27,7 +27,7 @@ python staffing.py      # rota, costs, value, sensitivity (~5 s)
 python cost_check.py    # Garden cost finding (~2 s)
 ```
 
-Put the hackathon file `stories_transactions.csv` in `data/` first. Every output goes to `outputs/`.
+Put the hackathon file `stories_transactions.csv` in the repo's top-level [`data/`](../data/) folder first. Every output goes to `outputs/`.
 
 ## Try it in the browser
 

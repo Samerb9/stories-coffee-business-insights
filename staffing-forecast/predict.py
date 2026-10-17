@@ -17,7 +17,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--branch", required=True, choices=BRANCHES)
 ap.add_argument("--date", required=True, help="YYYY-MM-DD")
 ap.add_argument("--hour", required=True, type=int, choices=HOURS)
-ap.add_argument("--model", default="outputs/model.json")
+ap.add_argument("--model", default=str(__import__("pathlib").Path(__file__).resolve().parent / "outputs/model.json"))
 args = ap.parse_args()
 
 m = json.load(open(args.model))
