@@ -1,0 +1,20 @@
+model,settings,may_deviance,may_wape,may_bias
+M1-full,"{""dh"": true, ""trend"": ""linear"", ""bt"": false}",1.1182,0.3784,-0.0116
+M1-noDH,"{""dh"": false, ""trend"": ""linear"", ""bt"": false}",1.1024,0.3759,-0.0116
+M1-log,"{""dh"": true, ""trend"": ""log"", ""bt"": false}",1.1616,0.3830,-0.1014
+M1-bt,"{""dh"": true, ""trend"": ""linear"", ""bt"": true}",1.1183,0.3784,-0.0116
+M2,"{""learning_rate"": 0.03, ""max_depth"": 3, ""max_iter"": 300}",1.1228,0.3797,-0.0409
+M2,"{""learning_rate"": 0.03, ""max_depth"": 5, ""max_iter"": 300}",1.1615,0.3895,-0.0214
+M2,"{""learning_rate"": 0.03, ""max_depth"": null, ""max_iter"": 300}",1.1628,0.3904,-0.0293
+M2,"{""learning_rate"": 0.1, ""max_depth"": 3, ""max_iter"": 300}",1.1718,0.3895,-0.0406
+M2,"{""learning_rate"": 0.1, ""max_depth"": 5, ""max_iter"": 300}",1.2591,0.4084,-0.0320
+M2,"{""learning_rate"": 0.1, ""max_depth"": null, ""max_iter"": 300}",1.2576,0.4078,-0.0297
+M2b,"{""learning_rate"": 0.03, ""max_depth"": 3, ""max_iter"": 300}",1.1082,0.3752,-0.0115
+M2b,"{""learning_rate"": 0.03, ""max_depth"": 5, ""max_iter"": 300}",1.1302,0.3815,-0.0116
+M2b,"{""learning_rate"": 0.03, ""max_depth"": null, ""max_iter"": 300}",1.1350,0.3824,-0.0116
+M2b,"{""learning_rate"": 0.1, ""max_depth"": 3, ""max_iter"": 300}",1.1211,0.3788,-0.0116
+M2b,"{""learning_rate"": 0.1, ""max_depth"": 5, ""max_iter"": 300}",1.1496,0.3854,-0.0116
+M2b,"{""learning_rate"": 0.1, ""max_depth"": null, ""max_iter"": 300}",1.1501,0.3855,-0.0116
+B1 last week,,9.4955,0.5127,-0.0828
+B2 4-week avg,,1.5760,0.4193,-0.0897
+B3 flat avg,,1.4651,0.4345,-0.1759

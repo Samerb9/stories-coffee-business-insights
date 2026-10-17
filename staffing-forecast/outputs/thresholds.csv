@@ -1,0 +1,16 @@
+branch,threshold_visits_per_hour,first_month_average_above,first_month_single_hour_likely_above
+Garden,10,already above in June,already in June
+Garden,15,Jul,Aug
+Garden,20,not before Nov (beyond tested range),not before Nov (beyond tested range)
+Garden,25,not before Nov (beyond tested range),not before Nov (beyond tested range)
+Garden,30,not before Nov (beyond tested range),not before Nov (beyond tested range)
+Harbour,10,already above in June,already in June
+Harbour,15,already above in June,already in June
+Harbour,20,already above in June,already in June
+Harbour,25,Sep,Sep
+Harbour,30,not before Nov (beyond tested range),not before Nov (beyond tested range)
+Uptown,10,Sep,Oct
+Uptown,15,not before Nov (beyond tested range),not before Nov (beyond tested range)
+Uptown,20,not before Nov (beyond tested range),not before Nov (beyond tested range)
+Uptown,25,not before Nov (beyond tested range),not before Nov (beyond tested range)
+Uptown,30,not before Nov (beyond tested range),not before Nov (beyond tested range)
