@@ -1,0 +1,56 @@
+{
+  "garden_over_harbour_unit_cost": {
+    "min": 1.4261,
+    "max": 1.4386,
+    "products": 45
+  },
+  "uptown_over_harbour_unit_cost": {
+    "min": 0.9524,
+    "max": 0.9651
+  },
+  "garden_over_harbour_price": {
+    "min": 0.9512,
+    "max": 0.9532
+  },
+  "water_products_cost_ratio": {
+    "Sparkling Water": 1.4296,
+    "Still Water": 1.4308
+  },
+  "by_branch": {
+    "Garden": {
+      "revenue": 99530.55,
+      "gross_profit": 46696.16,
+      "cogs": 52834.39,
+      "units": 17795.0,
+      "margin": 0.4692
+    },
+    "Harbour": {
+      "revenue": 150099.05,
+      "gross_profit": 97503.46,
+      "cogs": 52595.59,
+      "units": 26025.0,
+      "margin": 0.6496
+    },
+    "Uptown": {
+      "revenue": 55554.11,
+      "gross_profit": 34794.66,
+      "cogs": 20759.45,
+      "units": 10135.0,
+      "margin": 0.6263
+    }
+  },
+  "garden_units_vs_harbour": -0.3162,
+  "garden_cogs_vs_harbour": 0.0045,
+  "monthly_cogs_garden_over_harbour": {
+    "1": 1.016,
+    "2": 1.056,
+    "3": 1.033,
+    "4": 1.007,
+    "5": 0.976,
+    "6": 0.967
+  },
+  "garden_margin_with_harbour_mix": 0.4784,
+  "garden_margin_at_harbour_costs": 0.6288,
+  "excess_cost_jan_jun_usd": 15888.0,
+  "excess_cost_per_year_usd": 32038.0
+}

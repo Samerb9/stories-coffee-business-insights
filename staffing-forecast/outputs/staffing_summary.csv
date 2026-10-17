@@ -1,0 +1,49 @@
+branch,month,staff_hours,wage_cost,lost_customers,lost_gp,customers,plan,total_cost,lost_share
+Garden,Aug,120,480.00,5.27,22.06,617.94,Forecast-based (cost-optimal),502.06,0.01
+Garden,Jul,120,480.00,3.36,14.04,568.85,Forecast-based (cost-optimal),494.04,0.01
+Garden,Oct,124,496.00,6.61,27.64,728.48,Forecast-based (cost-optimal),523.64,0.01
+Garden,Sep,122,488.00,5.73,23.95,670.83,Forecast-based (cost-optimal),511.95,0.01
+Harbour,Aug,135,540.00,7.63,45.53,904.21,Forecast-based (cost-optimal),585.53,0.01
+Harbour,Jul,129,516.00,7.76,46.31,832.40,Forecast-based (cost-optimal),562.31,0.01
+Harbour,Oct,146,584.00,9.59,57.25,1065.90,Forecast-based (cost-optimal),641.25,0.01
+Harbour,Sep,139,556.00,9.07,54.11,981.59,Forecast-based (cost-optimal),610.11,0.01
+Uptown,Aug,119,476.00,0.38,2.08,353.76,Forecast-based (cost-optimal),478.08,0.00
+Uptown,Jul,119,476.00,0.23,1.23,325.71,Forecast-based (cost-optimal),477.23,0.00
+Uptown,Oct,119,476.00,1.09,5.96,416.98,Forecast-based (cost-optimal),481.96,0.00
+Uptown,Sep,119,476.00,0.66,3.57,383.98,Forecast-based (cost-optimal),479.57,0.00
+Garden,Aug,122,488.00,3.60,15.05,617.94,Staff to the average,503.05,0.01
+Garden,Jul,120,480.00,3.36,14.04,568.85,Staff to the average,494.04,0.01
+Garden,Oct,127,508.00,4.17,17.42,728.48,Staff to the average,525.42,0.01
+Garden,Sep,124,496.00,4.09,17.10,670.83,Staff to the average,513.10,0.01
+Harbour,Aug,133,532.00,8.98,53.63,904.21,Staff to the average,585.63,0.01
+Harbour,Jul,129,516.00,7.76,46.31,832.40,Staff to the average,562.31,0.01
+Harbour,Oct,146,584.00,9.59,57.25,1065.90,Staff to the average,641.25,0.01
+Harbour,Sep,139,556.00,9.07,54.11,981.59,Staff to the average,610.11,0.01
+Uptown,Aug,119,476.00,0.38,2.08,353.76,Staff to the average,478.08,0.00
+Uptown,Jul,119,476.00,0.23,1.23,325.71,Staff to the average,477.23,0.00
+Uptown,Oct,119,476.00,1.09,5.96,416.98,Staff to the average,481.96,0.00
+Uptown,Sep,119,476.00,0.66,3.57,383.98,Staff to the average,479.57,0.00
+Garden,Aug,238,952.00,0.05,0.20,617.94,Fixed crew sized for the peak,952.20,0.00
+Garden,Jul,238,952.00,0.02,0.08,568.85,Fixed crew sized for the peak,952.08,0.00
+Garden,Oct,357,1428.00,0.00,0.00,728.48,Fixed crew sized for the peak,1428.00,0.00
+Garden,Sep,357,1428.00,0.00,0.00,670.83,Fixed crew sized for the peak,1428.00,0.00
+Harbour,Aug,357,1428.00,0.01,0.07,904.21,Fixed crew sized for the peak,1428.07,0.00
+Harbour,Jul,357,1428.00,0.00,0.02,832.40,Fixed crew sized for the peak,1428.02,0.00
+Harbour,Oct,476,1904.00,0.00,0.00,1065.90,Fixed crew sized for the peak,1904.00,0.00
+Harbour,Sep,357,1428.00,0.04,0.26,981.59,Fixed crew sized for the peak,1428.26,0.00
+Uptown,Aug,238,952.00,0.00,0.00,353.76,Fixed crew sized for the peak,952.00,0.00
+Uptown,Jul,238,952.00,0.00,0.00,325.71,Fixed crew sized for the peak,952.00,0.00
+Uptown,Oct,238,952.00,0.00,0.00,416.98,Fixed crew sized for the peak,952.00,0.00
+Uptown,Sep,238,952.00,0.00,0.00,383.98,Fixed crew sized for the peak,952.00,0.00
+Garden,Aug,238,952.00,0.05,0.20,617.94,Fixed crew of 2,952.20,0.00
+Garden,Jul,238,952.00,0.02,0.08,568.85,Fixed crew of 2,952.08,0.00
+Garden,Oct,238,952.00,0.27,1.12,728.48,Fixed crew of 2,953.12,0.00
+Garden,Sep,238,952.00,0.12,0.49,670.83,Fixed crew of 2,952.49,0.00
+Harbour,Aug,238,952.00,1.42,8.46,904.21,Fixed crew of 2,960.46,0.00
+Harbour,Jul,238,952.00,0.79,4.70,832.40,Fixed crew of 2,956.70,0.00
+Harbour,Oct,238,952.00,4.41,26.33,1065.90,Fixed crew of 2,978.33,0.00
+Harbour,Sep,238,952.00,2.56,15.30,981.59,Fixed crew of 2,967.30,0.00
+Uptown,Aug,238,952.00,0.00,0.00,353.76,Fixed crew of 2,952.00,0.00
+Uptown,Jul,238,952.00,0.00,0.00,325.71,Fixed crew of 2,952.00,0.00
+Uptown,Oct,238,952.00,0.00,0.00,416.98,Fixed crew of 2,952.00,0.00
+Uptown,Sep,238,952.00,0.00,0.00,383.98,Fixed crew of 2,952.00,0.00

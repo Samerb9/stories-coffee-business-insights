@@ -1,0 +1,264 @@
+{
+  "assumptions": {
+    "capacity_customers_per_staff_hour": 12,
+    "wage_usd_per_staff_hour": 4.0,
+    "leave_share_over_capacity": 0.5,
+    "min_crew": 1
+  },
+  "measured_gp_per_receipt": {
+    "Garden": 4.1831,
+    "Harbour": 5.9694,
+    "Uptown": 5.4452
+  },
+  "weekly_by_plan_and_month": {
+    "Fixed crew of 2 | Aug": {
+      "staff_hours": 714.0,
+      "wage_cost": 2856.0,
+      "lost_customers": 1.46,
+      "lost_gp": 8.66,
+      "total_cost": 2864.66,
+      "customers": 1875.91
+    },
+    "Fixed crew of 2 | Jul": {
+      "staff_hours": 714.0,
+      "wage_cost": 2856.0,
+      "lost_customers": 0.81,
+      "lost_gp": 4.78,
+      "total_cost": 2860.78,
+      "customers": 1726.96
+    },
+    "Fixed crew of 2 | Oct": {
+      "staff_hours": 714.0,
+      "wage_cost": 2856.0,
+      "lost_customers": 4.68,
+      "lost_gp": 27.45,
+      "total_cost": 2883.45,
+      "customers": 2211.36
+    },
+    "Fixed crew of 2 | Sep": {
+      "staff_hours": 714.0,
+      "wage_cost": 2856.0,
+      "lost_customers": 2.68,
+      "lost_gp": 15.79,
+      "total_cost": 2871.79,
+      "customers": 2036.4
+    },
+    "Fixed crew sized for the peak | Aug": {
+      "staff_hours": 833.0,
+      "wage_cost": 3332.0,
+      "lost_customers": 0.06,
+      "lost_gp": 0.27,
+      "total_cost": 3332.27,
+      "customers": 1875.91
+    },
+    "Fixed crew sized for the peak | Jul": {
+      "staff_hours": 833.0,
+      "wage_cost": 3332.0,
+      "lost_customers": 0.02,
+      "lost_gp": 0.11,
+      "total_cost": 3332.11,
+      "customers": 1726.96
+    },
+    "Fixed crew sized for the peak | Oct": {
+      "staff_hours": 1071.0,
+      "wage_cost": 4284.0,
+      "lost_customers": 0.0,
+      "lost_gp": 0.01,
+      "total_cost": 4284.01,
+      "customers": 2211.36
+    },
+    "Fixed crew sized for the peak | Sep": {
+      "staff_hours": 952.0,
+      "wage_cost": 3808.0,
+      "lost_customers": 0.04,
+      "lost_gp": 0.26,
+      "total_cost": 3808.26,
+      "customers": 2036.4
+    },
+    "Forecast-based (cost-optimal) | Aug": {
+      "staff_hours": 374.0,
+      "wage_cost": 1496.0,
+      "lost_customers": 13.28,
+      "lost_gp": 69.67,
+      "total_cost": 1565.67,
+      "customers": 1875.91
+    },
+    "Forecast-based (cost-optimal) | Jul": {
+      "staff_hours": 368.0,
+      "wage_cost": 1472.0,
+      "lost_customers": 11.34,
+      "lost_gp": 61.58,
+      "total_cost": 1533.58,
+      "customers": 1726.96
+    },
+    "Forecast-based (cost-optimal) | Oct": {
+      "staff_hours": 389.0,
+      "wage_cost": 1556.0,
+      "lost_customers": 17.29,
+      "lost_gp": 90.85,
+      "total_cost": 1646.85,
+      "customers": 2211.36
+    },
+    "Forecast-based (cost-optimal) | Sep": {
+      "staff_hours": 380.0,
+      "wage_cost": 1520.0,
+      "lost_customers": 15.45,
+      "lost_gp": 81.64,
+      "total_cost": 1601.64,
+      "customers": 2036.4
+    },
+    "Staff to the average | Aug": {
+      "staff_hours": 374.0,
+      "wage_cost": 1496.0,
+      "lost_customers": 12.97,
+      "lost_gp": 70.77,
+      "total_cost": 1566.77,
+      "customers": 1875.91
+    },
+    "Staff to the average | Jul": {
+      "staff_hours": 368.0,
+      "wage_cost": 1472.0,
+      "lost_customers": 11.34,
+      "lost_gp": 61.58,
+      "total_cost": 1533.58,
+      "customers": 1726.96
+    },
+    "Staff to the average | Oct": {
+      "staff_hours": 392.0,
+      "wage_cost": 1568.0,
+      "lost_customers": 14.85,
+      "lost_gp": 80.63,
+      "total_cost": 1648.63,
+      "customers": 2211.36
+    },
+    "Staff to the average | Sep": {
+      "staff_hours": 382.0,
+      "wage_cost": 1528.0,
+      "lost_customers": 13.81,
+      "lost_gp": 74.79,
+      "total_cost": 1602.79,
+      "customers": 2036.4
+    }
+  },
+  "forecast_plan_by_branch": {
+    "Garden Aug": {
+      "staff_hours": 120,
+      "wage_cost": 480.0,
+      "lost_customers": 5.27
+    },
+    "Garden Jul": {
+      "staff_hours": 120,
+      "wage_cost": 480.0,
+      "lost_customers": 3.36
+    },
+    "Garden Oct": {
+      "staff_hours": 124,
+      "wage_cost": 496.0,
+      "lost_customers": 6.61
+    },
+    "Garden Sep": {
+      "staff_hours": 122,
+      "wage_cost": 488.0,
+      "lost_customers": 5.73
+    },
+    "Harbour Aug": {
+      "staff_hours": 135,
+      "wage_cost": 540.0,
+      "lost_customers": 7.63
+    },
+    "Harbour Jul": {
+      "staff_hours": 129,
+      "wage_cost": 516.0,
+      "lost_customers": 7.76
+    },
+    "Harbour Oct": {
+      "staff_hours": 146,
+      "wage_cost": 584.0,
+      "lost_customers": 9.59
+    },
+    "Harbour Sep": {
+      "staff_hours": 139,
+      "wage_cost": 556.0,
+      "lost_customers": 9.07
+    },
+    "Uptown Aug": {
+      "staff_hours": 119,
+      "wage_cost": 476.0,
+      "lost_customers": 0.38
+    },
+    "Uptown Jul": {
+      "staff_hours": 119,
+      "wage_cost": 476.0,
+      "lost_customers": 0.23
+    },
+    "Uptown Oct": {
+      "staff_hours": 119,
+      "wage_cost": 476.0,
+      "lost_customers": 1.09
+    },
+    "Uptown Sep": {
+      "staff_hours": 119,
+      "wage_cost": 476.0,
+      "lost_customers": 0.66
+    }
+  },
+  "oct_share_of_staff_hours_after_6pm": 0.393,
+  "yearly_saving_vs_fixed_crew_of_2": 66728.0,
+  "yearly_staff_hours_saved_vs_fixed_crew_of_2": 17485.0,
+  "keep_july_rota_in_october": {
+    "Garden": {
+      "extra_lost_customers_per_week": 5.65,
+      "extra_cost_per_week": 7.62,
+      "staff_hours_july_rota": 120,
+      "staff_hours_october_rota": 124
+    },
+    "Harbour": {
+      "extra_lost_customers_per_week": 19.8,
+      "extra_cost_per_week": 50.2,
+      "staff_hours_july_rota": 129,
+      "staff_hours_october_rota": 146
+    },
+    "Uptown": {
+      "extra_lost_customers_per_week": 0.0,
+      "extra_cost_per_week": 0.0,
+      "staff_hours_july_rota": 119,
+      "staff_hours_october_rota": 119
+    }
+  },
+  "oct_staff_hours_by_time_of_day": {
+    "07-10": {
+      "forecast_plan": 63,
+      "fixed_crew_of_2": 126
+    },
+    "10-18": {
+      "forecast_plan": 173,
+      "fixed_crew_of_2": 336
+    },
+    "18-24": {
+      "forecast_plan": 153,
+      "fixed_crew_of_2": 252
+    }
+  },
+  "max_staff_any_hour": {
+    "Jul": {
+      "Harbour": 2,
+      "Garden": 2,
+      "Uptown": 1
+    },
+    "Aug": {
+      "Harbour": 3,
+      "Garden": 2,
+      "Uptown": 1
+    },
+    "Sep": {
+      "Harbour": 3,
+      "Garden": 2,
+      "Uptown": 1
+    },
+    "Oct": {
+      "Harbour": 3,
+      "Garden": 2,
+      "Uptown": 1
+    }
+  }
+}

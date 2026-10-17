@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stories Visit Forecaster</title>
+<style>
+  :root {
+    --bg: #faf8f5; --panel: #ffffff; --ink: #1f1d1a; --muted: #6f6a63; --line: #e6e1da;
+    --accent: #c0392b; --accent-soft: #f3d9d5; --good: #2e7d4f; --actual: #1f1d1a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171513; --panel: #211f1c; --ink: #f1ede7; --muted: #a39d94; --line: #36322d;
+      --accent: #e5604f; --accent-soft: #4a2622; --good: #5cc28a; --actual: #f1ede7;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #171513; --panel: #211f1c; --ink: #f1ede7; --muted: #a39d94; --line: #36322d;
+    --accent: #e5604f; --accent-soft: #4a2622; --good: #5cc28a; --actual: #f1ede7;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  h2 { font-size: 17px; margin: 0 0 12px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+           padding: 18px; margin-bottom: 16px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: end; }
+  .controls label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px;
+                    text-transform: uppercase; letter-spacing: .04em; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; background: transparent; color: var(--ink); padding: 7px 12px;
+                font: inherit; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button.on { background: var(--accent); color: #fff; }
+  input[type=date], select, .btn { font: inherit; color: var(--ink); background: var(--panel);
+    border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+  .btn { cursor: pointer; }
+  .btn:hover { border-color: var(--accent); }
+  select:disabled { opacity: .45; }
+  .note { font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+  .badge { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 99px;
+           background: var(--accent-soft); color: var(--ink); }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .kpi .k { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .kpi .v { font-size: 26px; font-weight: 650; margin-top: 2px; }
+  .kpi .d { font-size: 13px; color: var(--muted); }
+  svg text { fill: var(--muted); font-size: 11px; }
+  .readout { min-height: 22px; font-size: 14px; margin-top: 6px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 5px; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--muted); font-weight: 600; }
+  tr.best td { font-weight: 650; }
+  .heat td { text-align: center; padding: 5px 2px; min-width: 34px; cursor: pointer; border: 1px solid var(--panel); }
+  .heat tr.sel td:first-child { color: var(--accent); font-weight: 700; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  img { max-width: 100%; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
+  details summary { cursor: pointer; color: var(--muted); }
+  .err { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stories visit forecaster</h1>
+  <p class="sub">Pick a branch and a day. The model predicts customers (receipts) for every hour.
+    For past days you can compare it with what actually happened.</p>
+
+  <div id="loadError" class="panel err" hidden></div>
+
+  <section class="panel">
+    <div class="controls">
+      <div>
+        <label>Branch</label>
+        <div class="seg" id="branchSeg"></div>
+      </div>
+      <div>
+        <label for="date">Day</label>
+        <button class="btn" id="prev" aria-label="Previous day">‹</button>
+        <input type="date" id="date" min="2026-01-01" max="2026-10-31">
+        <button class="btn" id="next" aria-label="Next day">›</button>
+      </div>
+      <div>
+        <label for="cap">Customers per staff-hour</label>
+        <input type="number" id="cap" min="4" max="40" step="1" style="width:90px;font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px">
+      </div>
+      <div><button class="btn" id="randomJune">Random June day (real test)</button></div>
+    </div>
+    <p class="note" id="modeNote"></p>
+  </section>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="panel" style="margin-top:16px">
+    <h2 id="dayTitle">Customers per hour</h2>
+    <div class="scroll"><svg id="dayChart" viewBox="0 0 760 300" width="100%" role="img"></svg></div>
+    <div class="readout" id="readout">Hover over an hour for details.</div>
+    <div class="legend">
+      <span><i style="background:var(--accent-soft);border:1px solid var(--accent)"></i>Predicted (expected)</span>
+      <span><i style="background:var(--accent)"></i>80% range</span>
+      <span><i style="background:var(--actual);border-radius:50%"></i>Actual</span>
+      <span><b style="color:var(--ink)">2</b> = staff needed that hour (12 customers per staff-hour, $4/h, half of over-capacity customers leave)</span>
+    </div>
+    <details style="margin-top:12px">
+      <summary>Hour-by-hour table, with staff needed</summary>
+      <div class="scroll"><table id="hourTable"></table></div>
+    </details>
+  </section>
+
+  <section class="panel">
+    <h2 id="weekTitle">The whole week</h2>
+    <div class="scroll"><table class="heat" id="heat"></table></div>
+    <p class="note">Expected customers per hour. Click a day to open it above.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Check it yourself: the June test</h2>
+    <p class="note" style="margin-top:0">The model below was trained on Jan–May only, then asked to predict all of June.
+      These numbers are recalculated in your browser from the saved model and the real June data.</p>
+    <div class="grid2" id="testKpis" style="margin:14px 0"></div>
+    <div class="scroll"><table id="backtest"></table></div>
+    <p class="note">Noise limit = the error even a perfect model would make, because at 2–7 customers an hour chance alone
+      moves the count a lot. A model can't beat it, only reach it.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Charts</h2>
+    <img src="../outputs/chart1_june_fit.png" alt="Predicted vs actual visits for one June week, per branch">
+    <div style="height:12px"></div>
+    <img src="../outputs/chart2_peak_forecast.png" alt="Busiest-hour forecast Jul–Oct per branch">
+  </section>
+
+  <p class="note">1 receipt = 1 customer (a group paying together counts once). Dates after 30 June are forecasts
+    (up to 31 October, the range the model was tested on). Source: Stories POS receipts, Jan–Jun 2026.</p>
+</main>
+
+<script src="../outputs/app_data.js"></script>
+<script src="../outputs/staffing_data.js"></script>
+<script>
+const BRANCHES = ["Harbour", "Garden", "Uptown"];
+const HOURS = Array.from({ length: 17 }, (_, i) => i + 7);
+const DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const START = Date.UTC(2026, 0, 1);
+const LAST_DATA = "2026-06-30", TEST_FROM = "2026-06-01";
+const LAST_FORECAST = "2026-10-31";
+
+const state = { branch: "Harbour", date: "2026-06-16", cap: window.STAFFING ? window.STAFFING.capacity : 12 };
+let FINAL, TEST, ACTUAL = new Map(), BACKTEST = [];
+
+// ---------- helpers
+const $ = (id) => document.getElementById(id);
+const dayIndex = (iso) => Math.round((Date.parse(iso + "T00:00:00Z") - START) / 864e5);
+const isoOf = (idx) => new Date(START + idx * 864e5).toISOString().slice(0, 10);
+const dowOf = (iso) => (new Date(iso + "T00:00:00Z").getUTCDay() + 6) % 7;
+const fmtDate = (iso) => new Date(iso + "T00:00:00Z").toLocaleDateString("en-GB",
+  { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const pct = (x, d = 1) => (x * 100).toFixed(d) + "%";
+
+// Poisson quantile: smallest k with P(Y <= k) >= q
+function poissonQ(mu, q) {
+  let p = Math.exp(-mu), cdf = p, k = 0;
+  while (cdf < q && k < 500) { k++; p *= mu / k; cdf += p; }
+  return k;
+}
+
+// ---------- staffing (same rule as staffing.py): staff k minimising wage*k + gp*leave*E[(Y - k*cap)+]
+function expectedExcess(mu, cap) {
+  let p = Math.exp(-mu), e = 0;
+  for (let y = 0; y < 200; y++) { if (y > cap) e += (y - cap) * p; p *= mu / (y + 1); }
+  return e;
+}
+function staffNeeded(mu, branch) {
+  const S = window.STAFFING, gp = S.gp[branch];
+  let best = S.min_crew, bestCost = Infinity;
+  for (let k = S.min_crew; k <= 8; k++) {
+    const c = S.wage * k + gp * S.leave * expectedExcess(mu, k * state.cap);
+    if (c < bestCost - 1e-12) { best = k; bestCost = c; }
+  }
+  return best;
+}
+
+// ---------- the model (same design matrix as forecast.py)
+function trendValue(t, kind) { return kind === "linear" ? t / 100 : Math.log1p(t); }
+
+function predict(model, branch, iso, hour) {
+  const row = { branch, dow: String(dowOf(iso)), hour: String(hour),
+                t: dayIndex(iso) };
+  let eta = 0;
+  model.columns.forEach((name, j) => {
+    let x = 1;
+    for (const part of name.split(":")) {
+      if (part === "intercept") continue;
+      if (part === "trend") { x *= trendValue(row.t, model.spec.trend); continue; }
+      const [k, v] = part.split("=");
+      if (row[k] !== v) { x = 0; break; }
+    }
+    if (x) eta += x * model.params[j];
+  });
+  return Math.exp(eta);
+}
+
+function modelFor(iso) {
+  if (iso >= TEST_FROM && iso <= LAST_DATA) return { model: TEST, kind: "test" };
+  if (iso < TEST_FROM) return { model: FINAL, kind: "train" };
+  return { model: FINAL, kind: "future" };
+}
+
+function dayForecast(branch, iso) {
+  const { model, kind } = modelFor(iso);
+  return HOURS.map((h) => {
+    const mu = predict(model, branch, iso, h);
+    const actual = ACTUAL.get(`${branch}|${iso}|${h}`);
+    return { hour: h, mu, lo: poissonQ(mu, 0.1), hi: poissonQ(mu, 0.9), hi95: poissonQ(mu, 0.95), actual, kind,
+             staff: window.STAFFING ? staffNeeded(mu, branch) : null };
+  });
+}
+
+// ---------- rendering
+function renderControls() {
+  $("branchSeg").innerHTML = BRANCHES.map((b) =>
+    `<button class="${b === state.branch ? "on" : ""}" data-b="${b}">${b}</button>`).join("");
+  $("date").value = state.date;
+  $("cap").value = state.cap;
+  const kind = modelFor(state.date).kind;
+  $("modeNote").innerHTML = {
+    test: `<span class="badge">Real test</span> June: this prediction comes from the model trained on Jan–May. It never saw this day.`,
+    train: `<span class="badge">Training data</span> Jan–May: the model learned from this day, so the match is not a fair test. Pick a June day for that.`,
+    future: `<span class="badge">Forecast</span> No data exists for this day yet. Growth continues at the Jan–Jun rate
+      (+1.9%/week). Forecasts 1–4 months ahead were ~96% accurate on weekly totals when tested.`,
+  }[kind];
+}
+
+function renderKpis(rows) {
+  const total = rows.reduce((s, r) => s + r.mu, 0);
+  const peak = rows.reduce((a, b) => (b.mu > a.mu ? b : a));
+  const quiet = rows.reduce((a, b) => (b.mu < a.mu ? b : a));
+  const hasActual = rows.every((r) => r.actual !== undefined);
+  const actualTotal = hasActual ? rows.reduce((s, r) => s + r.actual, 0) : null;
+  const cards = [
+    ["Predicted customers", total.toFixed(0), "whole day, 07:00–24:00"],
+    hasActual
+      ? ["Actual customers", actualTotal, `prediction was off by ${pct(Math.abs(total - actualTotal) / actualTotal)}`]
+      : ["Actual customers", "—", "no data for this day yet"],
+    ["Busiest hour", `${peak.hour}:00`, `${peak.mu.toFixed(1)} expected · 1 in 20 days ≥ ${peak.hi95}`],
+    rows[0].staff !== null
+      ? ["Staff-hours needed", rows.reduce((s, r) => s + r.staff, 0),
+         `max ${Math.max(...rows.map((r) => r.staff))} at once · ${state.cap} customers per staff-hour`]
+      : ["Quietest hour", `${quiet.hour}:00`, `${quiet.mu.toFixed(1)} expected`],
+  ];
+  $("kpis").innerHTML = cards.map(([k, v, d]) =>
+    `<div class="kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join("");
+}
+
+function renderDayChart(rows) {
+  const W = 760, H = 300, m = { l: 40, r: 10, t: 12, b: 34 };
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const ymax = Math.max(5, ...rows.map((r) => Math.max(r.hi, r.actual ?? 0))) * 1.08;
+  const y = (v) => m.t + ih - (v / ymax) * ih;
+  const bw = iw / rows.length;
+  const step = ymax > 30 ? 10 : ymax > 12 ? 5 : 2;
+  let s = "";
+  for (let v = 0; v <= ymax; v += step) {
+    s += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/>`;
+    s += `<text x="${m.l - 6}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
+  }
+  rows.forEach((r, i) => {
+    const x = m.l + i * bw, cx = x + bw / 2;
+    s += `<rect x="${x + bw * 0.18}" y="${y(r.mu)}" width="${bw * 0.64}" height="${y(0) - y(r.mu)}"
+             fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1" rx="3"/>`;
+    s += `<line x1="${cx}" x2="${cx}" y1="${y(r.lo)}" y2="${y(r.hi)}" stroke="var(--accent)" stroke-width="2"/>`;
+    s += `<line x1="${cx - 5}" x2="${cx + 5}" y1="${y(r.hi)}" y2="${y(r.hi)}" stroke="var(--accent)" stroke-width="2"/>`;
+    s += `<line x1="${cx - 5}" x2="${cx + 5}" y1="${y(r.lo)}" y2="${y(r.lo)}" stroke="var(--accent)" stroke-width="2"/>`;
+    if (r.actual !== undefined) s += `<circle cx="${cx}" cy="${y(r.actual)}" r="4.5" fill="var(--actual)"/>`;
+    s += `<text x="${cx}" y="${H - 14}" text-anchor="middle">${r.hour}</text>`;
+    if (r.staff !== null) s += `<text x="${cx}" y="${m.t + 10}" text-anchor="middle" style="fill:var(--ink);font-weight:600">${r.staff}</text>`;
+    s += `<rect class="hit" data-i="${i}" x="${x}" y="${m.t}" width="${bw}" height="${ih}" fill="transparent"/>`;
+  });
+  s += `<text x="${m.l + iw / 2}" y="${H - 1}" text-anchor="middle">Hour of the day</text>`;
+  s += `<text transform="translate(11 ${m.t + ih / 2}) rotate(-90)" text-anchor="middle">Customers per hour</text>`;
+  const svg = $("dayChart");
+  svg.innerHTML = s;
+  svg.querySelectorAll(".hit").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      const r = rows[+el.dataset.i];
+      $("readout").innerHTML = `<b>${r.hour}:00–${r.hour}:59</b> · expected <b>${r.mu.toFixed(1)}</b>` +
+        ` · 80% range ${r.lo}–${r.hi} · 95% high ${r.hi95}` + (r.staff !== null ? ` · staff needed <b>${r.staff}</b>` : "") +
+        (r.actual !== undefined ? ` · actual <b>${r.actual}</b>` : "");
+    });
+  });
+  $("dayTitle").textContent = `${state.branch} · ${fmtDate(state.date)}`;
+}
+
+function renderHourTable(rows) {
+  const hasActual = rows[0].actual !== undefined;
+  $("hourTable").innerHTML =
+    `<tr><th>Hour</th><th>Expected</th><th>80% range</th><th>95% high</th><th>Staff needed</th>${hasActual ? "<th>Actual</th>" : ""}</tr>` +
+    rows.map((r) => `<tr><td>${r.hour}:00</td><td>${r.mu.toFixed(1)}</td><td>${r.lo}–${r.hi}</td><td>${r.hi95}</td><td>${r.staff ?? "—"}</td>` +
+      (hasActual ? `<td>${r.actual}</td>` : "") + "</tr>").join("");
+}
+
+function renderWeek() {
+  const d0 = dayIndex(state.date) - dowOf(state.date);
+  const days = Array.from({ length: 7 }, (_, i) => isoOf(d0 + i)).filter((iso) => iso >= "2026-01-01" && iso <= LAST_FORECAST);
+  const grid = days.map((iso) => ({ iso, vals: dayForecast(state.branch, iso).map((r) => r.mu) }));
+  const max = Math.max(...grid.flatMap((g) => g.vals));
+  $("heat").innerHTML = `<tr><th></th>${HOURS.map((h) => `<th style="text-align:center">${h}</th>`).join("")}<th>Day</th></tr>` +
+    grid.map((g) => `<tr data-iso="${g.iso}" class="${g.iso === state.date ? "sel" : ""}"><td>${fmtDate(g.iso).split(" ").slice(0, 3).join(" ")}</td>` +
+      g.vals.map((v) => `<td style="background:color-mix(in srgb, var(--accent) ${Math.round((v / max) * 85)}%, var(--panel));
+        color:${v / max > 0.55 ? "#fff" : "var(--ink)"}">${v.toFixed(v < 10 ? 1 : 0)}</td>`).join("") +
+      `<td><b>${g.vals.reduce((a, b) => a + b, 0).toFixed(0)}</b></td></tr>`).join("");
+  $("heat").querySelectorAll("tr[data-iso]").forEach((tr) =>
+    tr.addEventListener("click", () => { state.date = tr.dataset.iso; render(); }));
+  $("weekTitle").textContent = `${state.branch} · week of ${fmtDate(days[0])}`;
+}
+
+// June test recomputed in the browser from model_test.json + hourly_actuals.csv
+function renderJuneTest() {
+  let absErr = 0, act = 0, n = 0;
+  const weekly = new Map(), daily = new Map();
+  for (const b of BRANCHES) {
+    for (let d = dayIndex(TEST_FROM); d <= dayIndex(LAST_DATA); d++) {
+      const iso = isoOf(d), wk = isoOf(d - dowOf(iso));
+      for (const h of HOURS) {
+        const mu = predict(TEST, b, iso, h), y = ACTUAL.get(`${b}|${iso}|${h}`);
+        absErr += Math.abs(mu - y); act += y; n++;
+        const kw = `${b}|${wk}`, kd = `${b}|${iso}`;
+        const w = weekly.get(kw) ?? { p: 0, y: 0, days: new Set() };
+        w.p += mu; w.y += y; w.days.add(iso); weekly.set(kw, w);
+        const dd = daily.get(kd) ?? { p: 0, y: 0 }; dd.p += mu; dd.y += y; daily.set(kd, dd);
+      }
+    }
+  }
+  const full = [...weekly.values()].filter((w) => w.days.size === 7);
+  const weekErr = full.reduce((s, w) => s + Math.abs(w.p - w.y) / w.y, 0) / full.length;
+  const dayVals = [...daily.values()];
+  const dayErr = dayVals.reduce((s, d) => s + Math.abs(d.p - d.y), 0) / dayVals.reduce((s, d) => s + d.y, 0);
+  const m1 = BACKTEST.find((r) => r.model.startsWith("M1"));
+  const cards = [
+    ["Weekly totals", pct(weekErr), "average miss per branch-week"],
+    ["Daily totals", pct(dayErr), "share of customers mis-predicted"],
+    ["Single hours", pct(absErr / act), `noise limit ${pct(m1.wape_floor)}`],
+    ["Hours tested", n.toLocaleString(), "3 branches × 30 days × 17 h"],
+  ];
+  $("testKpis").innerHTML = cards.map(([k, v, d]) =>
+    `<div class="kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join("");
+
+  const names = { "M1 Poisson GLM": "Our model (chosen)", "M2 gradient boosting": "ML: gradient boosting",
+    "M2b GLM trend + boosting": "ML + our growth trend", "B1 last week": "Same as last week",
+    "B2 4-week avg": "Average of last 4 weeks", "B3 flat avg": "Average for that hour" };
+  $("backtest").innerHTML = `<tr><th>Forecast (all made on 31 May)</th><th>Hourly error</th><th>Peak 19–23h error</th>
+      <th>Weekly error</th><th>Overall bias</th></tr>` +
+    BACKTEST.filter((r) => names[r.model]).map((r) => `<tr class="${r.model.startsWith("M1") ? "best" : ""}">
+      <td>${names[r.model]}</td><td>${pct(r.wape)}</td><td>${pct(r.peak_wape)}</td>
+      <td>${pct(r.weekly_ape_full_weeks)}</td><td>${(r.bias >= 0 ? "+" : "") + pct(r.bias)}</td></tr>`).join("") +
+    `<tr><td><i>Noise limit (perfect model)</i></td><td><i>${pct(m1.wape_floor)}</i></td><td><i>${pct(m1.peak_wape_floor)}</i></td><td></td><td></td></tr>`;
+}
+
+function render() {
+  renderControls();
+  const rows = dayForecast(state.branch, state.date);
+  renderKpis(rows);
+  renderDayChart(rows);
+  renderHourTable(rows);
+  renderWeek();
+}
+
+// ---------- events
+$("branchSeg").addEventListener("click", (e) => { if (e.target.dataset.b) { state.branch = e.target.dataset.b; render(); } });
+$("date").addEventListener("change", (e) => {
+  const v = e.target.value;
+  if (v) { state.date = v < "2026-01-01" ? "2026-01-01" : v > LAST_FORECAST ? LAST_FORECAST : v; render(); }
+});
+const shift = (k) => { const i = Math.min(dayIndex(LAST_FORECAST), Math.max(0, dayIndex(state.date) + k)); state.date = isoOf(i); render(); };
+$("cap").addEventListener("change", (e) => { const v = +e.target.value; if (v >= 4 && v <= 40) { state.cap = v; render(); } });
+$("prev").addEventListener("click", () => shift(-1));
+$("next").addEventListener("click", () => shift(1));
+$("randomJune").addEventListener("click", () => {
+  state.date = isoOf(dayIndex(TEST_FROM) + Math.floor(Math.random() * 30));
+  state.branch = BRANCHES[Math.floor(Math.random() * 3)];
+  render();
+});
+
+// ---------- load (data comes from outputs/app_data.js, written by forecast.py)
+function start(d) {
+  FINAL = d.model; TEST = d.model_test; BACKTEST = d.backtest;
+  const a = d.actuals, nDays = a.y.length / (a.branches.length * a.hours.length);
+  let i = 0;
+  for (const b of a.branches)
+    for (let day = 0; day < nDays; day++)
+      for (const h of a.hours) ACTUAL.set(`${b}|${isoOf(day)}|${h}`, a.y[i++]);
+  render();
+  renderJuneTest();
+}
+
+if (window.APP_DATA) start(window.APP_DATA);
+else {
+  $("loadError").hidden = false;
+  $("loadError").innerHTML = `No model data found. Run <code>python forecast.py</code> in the project folder first
+    (it creates <code>outputs/app_data.js</code>), then reload this page.`;
+}
+</script>
+</body>
+</html>
