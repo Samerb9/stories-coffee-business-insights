@@ -1,0 +1,10 @@
+decision_from,hour_cost,hours_cut_per_week,predicted_value_june,realised_value_june
+Forecast model (trained Jan-May),8,24,216.55,156.29
+Forecast model (trained Jan-May),12,51,870.61,807.30
+Forecast model (trained Jan-May),15,68,1643.59,1644.82
+"Baseline: Jan-May average, no growth",8,40,427.58,37.38
+"Baseline: Jan-May average, no growth",12,68,1352.79,724.68
+"Baseline: Jan-May average, no growth",15,79,2317.91,1479.39
+Hindsight: June's actual averages (upper bound),8,29,288.71,282.79
+Hindsight: June's actual averages (upper bound),12,56,1059.63,1037.56
+Hindsight: June's actual averages (upper bound),15,69,1871.29,1835.62
