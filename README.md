@@ -13,6 +13,8 @@ Transaction data analysis for the EECE490 Stories Coffee Hackathon, exploring pr
 | 1 | Staff each hour to forecast demand | 1 person in quiet hours, 2–3 only at evening peaks; add Harbour evening hours as demand grows | up to ~$67k/year in staff-hours (depends on the minimum-crew rule) | [`staffing-forecast/`](staffing-forecast/) |
 | 1b | Garden's cost anomaly | Check one month of Garden supplier invoices | ~$32k/year, or a cost-allocation error hiding ~16 margin points | [`staffing-forecast/`](staffing-forecast/) (§10 of the report) |
 | 2 | Opening hours | Keep evening hours; pilot staying open until 01:00 at Harbour on Tue/Wed/Fri; Uptown can open at 8:00 | ~$1.3k/year from mornings; $1.3k–9.6k/year if the late hour works | [`opening-hours/`](opening-hours/) |
+| 3 | Item mix planning | Plan each item's share from a 5-month average plus a monthly watchlist, not from last month | 19% fewer units mis-planned in a June test; at most ~$6.7k/year of waste | [`taste-shift/`](taste-shift/) |
+| 4 | Habit-building promotions | Judge promotions on 8-week profit; first run one randomised ~$500 test | a $471 discount returned an estimated $971–1,737 | [`promotion-habit/`](promotion-habit/) |
 
 All ideas start from a [data audit](data-audit/) (21 checks) and share one tested forecast of customers per branch per hour. It's accurate to 3–4% on weekly totals up to 4 months ahead, on months the model never saw.
 
@@ -28,6 +30,14 @@ Separately, Garden's recorded unit costs are exactly **1.43× Harbour's on all 4
 
 **Don't close earlier; test closing later at Harbour.** Every evening hour earns 1.5–22× the ~$8 it costs to stay open, and only 11 of 357 branch-hours a week fall below cost, all early mornings at Uptown and Garden. Trimming them saves under ~$1.3k a year. Orders stay flat right up to 23:59, so staying open until 01:00 at Harbour pays off if the extra hour brings just 12–25% of the 11pm hour's profit (~$1.3k–9.6k a year). There's no data after midnight, so this needs a 6-week pilot, not a prediction. In a test on June, hours chosen with our forecast delivered 4× the value of hours chosen from plain averages, which ignored growth.
 
+## Conclusion: Idea 3 (item mix planning)
+
+Each branch should plan an item's share of its category from the average of the last five months, adjusting only for a short watchlist of steadily trending items. In a test on June, this mis-planned **19% fewer units** than copying last month (9.3% against 11.4% error). Most monthly swings in item choice are noise that reverses (correlation −0.59 between consecutive periods). A few items drift steadily; Strawberry Matcha gained 4.8 points of its category and Iced Matcha lost 4.5. The value is planning accuracy, at most about $6.7k a year of avoided waste.
+
+## Conclusion: Idea 4 (habit-building promotions)
+
+After Harbour's 15%-off week on cold coffee and desserts, Harbour kept selling an estimated **11–15%** more of those items than the other branches for three months, while its other items didn't change. None of 28 fake start dates or 500 random item sets came close. That turns a $471 discount into about **$971–1,737** of extra gross profit. The evidence is suggestive, not conclusive: the lift is clear against Uptown but uncertain against Garden alone. Stories should run one randomised ~$500 promotion with an 8-week follow-up before changing how it judges promotions.
+
 Every dollar figure rests on stated assumptions. Each idea's report shows which assumptions change the decision, the tests against baselines on unseen data, alternative explanations, and a practical test Stories can run first.
 
 ## Repository layout
@@ -37,6 +47,8 @@ Every dollar figure rests on stated assumptions. Each idea's report shows which 
 | [`data-audit/`](data-audit/) | 21 automated data-quality checks run before any analysis |
 | [`staffing-forecast/`](staffing-forecast/) | Hourly customer forecast (shared by all ideas), staffing decision, Garden cost finding, browser app |
 | [`opening-hours/`](opening-hours/) | Opening and closing hours decision, tested on June, plus a late-night pilot design |
+| [`taste-shift/`](taste-shift/) | Item-mix trends within each category and the best planning rule, tested on June |
+| [`promotion-habit/`](promotion-habit/) | Lasting effect of Harbour's 15% promotion, with placebo checks |
 | [`data/`](data/) | Where to put `stories_transactions.csv` (not committed) |
 
 ## Reproduce
@@ -50,6 +62,8 @@ python staffing-forecast/forecast.py
 python staffing-forecast/staffing.py
 python staffing-forecast/cost_check.py
 python opening-hours/hours.py
+python taste-shift/taste_shift.py
+python promotion-habit/promo_habit.py
 ```
 
-Everything runs in under a minute. Open `staffing-forecast/app/index.html` in a browser to explore the forecast.
+Everything runs in about two minutes. Open `staffing-forecast/app/index.html` in a browser to explore the forecast.
