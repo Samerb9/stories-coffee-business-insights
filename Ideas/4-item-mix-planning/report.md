@@ -71,7 +71,7 @@ So if a branch boosts prep for an item because it sold well last month, it will 
 
 - **The shift in tastes is not a profit story.** The rising items earn about the same profit per unit as those they replace. Moving from January's mix to June's, at June volumes, is worth about **−$60 a month** **[ESTIMATED]**.
 - **The value is in planning accuracy.** In June the steady-mix rule mis-planned **240 fewer units** than copying last month. If each mis-planned unit wasted its average cost ($2.34), that's at most about **$6.7k a year** **[ESTIMATED, upper bound]**. The real figure is lower, because not every planning error becomes waste.
-- **The limit:** branches plan prep **daily**, and at the daily level chance dominates. The error is about **44%** whichever rule is used **[MEASURED]**. The steady mix fixes each item's *share*; branches still need buffers for day-to-day swings. Our visit forecast in [`../ml-staffing-forecast`](../ml-staffing-forecast) can size the daily total.
+- **The limit:** branches plan prep **daily**, and at the daily level chance dominates. The error is about **44%** whichever rule is used **[MEASURED]**. The steady mix fixes each item's *share*; branches still need buffers for day-to-day swings. Our visit forecast in [`../1-ml-staffing-forecast`](../1-ml-staffing-forecast) can size the daily total.
 
 ## 6. Assumptions, alternative explanations and weak areas
 
@@ -100,7 +100,7 @@ So if a branch boosts prep for an item because it sold well last month, it will 
 ## 9. Reproduce
 
 ```bash
-cd taste-shift
+cd Ideas/4-item-mix-planning
 python taste_shift.py
 ```
 

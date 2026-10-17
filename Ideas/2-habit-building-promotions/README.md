@@ -1,4 +1,4 @@
-# Idea 4: Habit-building promotions: judge discounts over eight weeks, not one
+# Idea 2: Habit-building promotions: judge discounts over eight weeks, not one
 
 **Team:** Christopher Ferzli, Samer Bannout
 
