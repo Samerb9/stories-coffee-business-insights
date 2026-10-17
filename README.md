@@ -10,15 +10,15 @@ Transaction data analysis for the EECE490 Stories Coffee Hackathon, exploring pr
 
 | # | Idea | Action for the CEO | Value (estimated) | Folder |
 |---|---|---|---|---|
-| 1 | Staff each hour to forecast demand | 1 person in quiet hours, 2–3 only at evening peaks; add Harbour evening hours as demand grows | up to ~$67k/year in staff-hours (depends on the minimum-crew rule) | [`staffing-forecast/`](staffing-forecast/) |
-| 1b | Garden's cost anomaly | Check one month of Garden supplier invoices | ~$32k/year, or a cost-allocation error hiding ~16 margin points | [`staffing-forecast/`](staffing-forecast/) (§10 of the report) |
-| 2 | Opening hours | Keep evening hours; pilot staying open until 01:00 at Harbour on Tue/Wed/Fri; Uptown can open at 8:00 | ~$1.3k/year from mornings; $1.3k–9.6k/year if the late hour works | [`opening-hours/`](opening-hours/) |
-| 3 | Item mix planning | Plan each item's share from a 5-month average plus a monthly watchlist, not from last month | 19% fewer units mis-planned in a June test; at most ~$6.7k/year of waste | [`taste-shift/`](taste-shift/) |
-| 4 | Habit-building promotions | Judge promotions on 8-week profit; first run one randomised ~$500 test | a $471 discount returned an estimated $971–1,737 | [`promotion-habit/`](promotion-habit/) |
+| 1 | ML staffing forecast: staff each hour to predicted demand | 1 person in quiet hours, 2–3 only at evening peaks; add Harbour evening hours as demand grows | up to ~$67k/year in staff-hours (depends on the minimum-crew rule) | [`Ideas/ml-staffing-forecast/`](Ideas/ml-staffing-forecast/) |
+| 1b | Garden's cost anomaly | Check one month of Garden supplier invoices | ~$32k/year, or a cost-allocation error hiding ~16 margin points | [`Ideas/ml-staffing-forecast/`](Ideas/ml-staffing-forecast/) (§10 of the report) |
+| 2 | Opening hours | Keep evening hours; pilot staying open until 01:00 at Harbour on Tue/Wed/Fri; Uptown can open at 8:00 | ~$1.3k/year from mornings; $1.3k–9.6k/year if the late hour works | [`Ideas/opening-hours/`](Ideas/opening-hours/) |
+| 3 | Item mix planning | Plan each item's share from a 5-month average plus a monthly watchlist, not from last month | 19% fewer units mis-planned in a June test; at most ~$6.7k/year of waste | [`Ideas/taste-shift/`](Ideas/taste-shift/) |
+| 4 | Habit-building promotions | Judge promotions on 8-week profit; first run one randomised ~$500 test | a $471 discount returned an estimated $971–1,737 | [`Ideas/promotion-habit/`](Ideas/promotion-habit/) |
 
-All ideas start from a [data audit](data-audit/) (21 checks) and share one tested forecast of customers per branch per hour. It's accurate to 3–4% on weekly totals up to 4 months ahead, on months the model never saw.
+All ideas start from a [data audit](data-audit/) (20 checks) and share one tested forecast of customers per branch per hour. It's accurate to 3–4% on weekly totals up to 4 months ahead, on months the model never saw.
 
-## Conclusion: Idea 1 (staffing)
+## Conclusion: Idea 1 (ML staffing forecast)
 
 Stories' customer flow is very predictable. Our model forecasts each branch's weekly customers within **3–4%** up to 4 months ahead, tested on months it never saw. Half of all customers arrive after 6pm, and Tuesday brings 1.5× a normal day. At 12 customers per staff-hour, one person covers almost every hour; a second is needed only in evening peaks, and a third only at Harbour on Tuesday at 9pm from August.
 
@@ -44,11 +44,11 @@ Every dollar figure rests on stated assumptions. Each idea's report shows which 
 
 | Folder | Contents |
 |---|---|
-| [`data-audit/`](data-audit/) | 21 automated data-quality checks run before any analysis |
-| [`staffing-forecast/`](staffing-forecast/) | Hourly customer forecast (shared by all ideas), staffing decision, Garden cost finding, browser app |
-| [`opening-hours/`](opening-hours/) | Opening and closing hours decision, tested on June, plus a late-night pilot design |
-| [`taste-shift/`](taste-shift/) | Item-mix trends within each category and the best planning rule, tested on June |
-| [`promotion-habit/`](promotion-habit/) | Lasting effect of Harbour's 15% promotion, with placebo checks |
+| [`Ideas/ml-staffing-forecast/`](Ideas/ml-staffing-forecast/) | Idea 1: ML forecast of customers per branch-hour (shared by all ideas), staffing decision, Garden cost finding, browser app |
+| [`Ideas/opening-hours/`](Ideas/opening-hours/) | Idea 2: opening and closing hours, tested on June, plus a late-night pilot design |
+| [`Ideas/taste-shift/`](Ideas/taste-shift/) | Idea 3: item-mix trends within each category and the best planning rule, tested on June |
+| [`Ideas/promotion-habit/`](Ideas/promotion-habit/) | Idea 4: lasting effect of Harbour's 15% promotion, with placebo checks |
+| [`data-audit/`](data-audit/) | 20 automated data-quality checks run before any analysis |
 | [`data/`](data/) | Where to put `stories_transactions.csv` (not committed) |
 
 ## Reproduce
@@ -56,14 +56,14 @@ Every dollar figure rests on stated assumptions. Each idea's report shows which 
 Put `stories_transactions.csv` in `data/`, then run:
 
 ```bash
-pip install -r staffing-forecast/requirements.txt
+pip install -r Ideas/ml-staffing-forecast/requirements.txt
 cd data-audit && python -m src.audit && cd ..
-python staffing-forecast/forecast.py
-python staffing-forecast/staffing.py
-python staffing-forecast/cost_check.py
-python opening-hours/hours.py
-python taste-shift/taste_shift.py
-python promotion-habit/promo_habit.py
+python Ideas/ml-staffing-forecast/forecast.py
+python Ideas/ml-staffing-forecast/staffing.py
+python Ideas/ml-staffing-forecast/cost_check.py
+python Ideas/opening-hours/hours.py
+python Ideas/taste-shift/taste_shift.py
+python Ideas/promotion-habit/promo_habit.py
 ```
 
-Everything runs in about two minutes. Open `staffing-forecast/app/index.html` in a browser to explore the forecast.
+Everything runs in about two minutes. Open `Ideas/ml-staffing-forecast/app/index.html` in a browser to explore the forecast.

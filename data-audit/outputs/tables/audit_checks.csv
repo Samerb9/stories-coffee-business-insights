@@ -11,7 +11,6 @@ positive qty/price/cost and cost < price,True,0 rows violate,0,
 discount values,True,"[0.0, 0.1, 0.15]",0,
 quantity values,True,"{1: 48267, 2: 2910}",0,
 one date/time/branch/customer/order type per transaction,True,0 inconsistent transactions,0,
-exact duplicate rows,False,"132 duplicate rows ($741 revenue); genuine doubles use qty=2 (2,910 lines)",132,dropped in every analysis (treated as double scans)
 price & cost constant within product x branch,True,max std = 0.0000,0,
 Garden vs Harbour price ratio,True,mean 0.952 (range 0.951-0.953),0,
 Garden vs Harbour cost ratio,True,mean 1.430 (range 1.426-1.439),0,
