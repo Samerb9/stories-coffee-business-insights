@@ -20,6 +20,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+from forecast import find_data
+
 # ---- assumptions (not in the data); see the report for why each value was chosen
 CAPACITY = 12      # customers one staff member can serve per hour (team assumption)
 WAGE = 4.0         # USD per staff-hour, fully loaded (Lebanon minimum wage is ~1.5-3 USD/h)
@@ -118,9 +120,10 @@ def chart_rota(h, k, month, path, title):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", default="data/stories_transactions.csv")
-    ap.add_argument("--out", default="outputs")
+    ap.add_argument("--data", default=None)
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parent / "outputs"))
     args = ap.parse_args()
+    args.data = find_data(args.data)
     out = Path(args.out)
 
     # measured input: gross profit per receipt, by branch

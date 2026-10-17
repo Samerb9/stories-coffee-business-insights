@@ -9,12 +9,15 @@ from pathlib import Path
 
 import pandas as pd
 
+from forecast import find_data
+
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", default="data/stories_transactions.csv")
-    ap.add_argument("--out", default="outputs")
+    ap.add_argument("--data", default=None)
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parent / "outputs"))
     args = ap.parse_args()
+    args.data = find_data(args.data)
     out = Path(args.out)
 
     d = pd.read_csv(args.data).drop_duplicates()

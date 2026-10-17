@@ -37,11 +37,10 @@ SOURCE = ("Source: Stories POS receipts Jan-Jun 2026; visit forecast Jul-Oct. As
 
 
 def find_data(arg):
-    for p in [arg, HERE / "data/stories_transactions.csv", HERE.parent / "data/stories_transactions.csv",
-              FORECAST_DIR / "data/stories_transactions.csv"]:
+    for p in [arg, HERE.parent / "data/stories_transactions.csv", HERE / "data/stories_transactions.csv"]:
         if p and Path(p).exists():
             return Path(p)
-    sys.exit("stories_transactions.csv not found: put it in staffing-forecast/data/ or pass --data")
+    sys.exit("stories_transactions.csv not found: put it in the data/ folder at the repo root or pass --data")
 
 
 def receipts_with_gp(path, garden_cost_fix=False):

@@ -4,7 +4,7 @@ Predicts how many receipts (visits) each branch will have in each hour,
 tests it on June 2026 and on forecasts 1-4 months ahead, and forecasts Jul-Oct 2026
 (the range the tests cover). The staffing decision built on it is in staffing.py.
 
-Run:  python forecast.py --data data/stories_transactions.csv --out outputs/
+Run:  python forecast.py   (reads ../data/stories_transactions.csv, writes outputs/)
 """
 import argparse
 import hashlib
@@ -40,6 +40,15 @@ ACCENT, GREY = "#C0392B", "#7F7F7F"
 SOURCE = "Source: Stories POS receipts, Jan-Jun 2026 (1 receipt = 1 visit); team analysis."
 
 FIT_LOG = []   # (model, last training date) for every fit; used by the leakage check
+
+
+def find_data(arg=None):
+    """The CSV lives in the shared data/ folder at the repo root (not committed)."""
+    here = Path(__file__).resolve().parent
+    for p in [arg, here.parent / "data" / "stories_transactions.csv", here / "data" / "stories_transactions.csv"]:
+        if p and Path(p).exists():
+            return Path(p)
+    raise SystemExit("stories_transactions.csv not found: put it in the data/ folder at the repo root")
 
 
 # ---------------------------------------------------------------- 1. data
@@ -479,9 +488,10 @@ def chart_projection(proj, june_actual, june_se, june_fit, peak_label, title, pa
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", default="data/stories_transactions.csv")
-    ap.add_argument("--out", default="outputs")
+    ap.add_argument("--data", default=None)
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parent / "outputs"))
     args = ap.parse_args()
+    args.data = find_data(args.data)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     t0 = time.perf_counter()
@@ -598,8 +608,6 @@ def main():
     # only candidate whose growth trend can be carried forward)
     final = GLMModel(m1_name).fit(table)
     save_model(final, out)
-    table[["branch", "date", "hour", "y"]].to_csv(out / "hourly_actuals.csv", index=False,
-                                                  date_format="%Y-%m-%d")
     cells, future, period_mean, single_hour = project(final, nb_alpha, rng)
 
     # 6a busiest hours Jul 1-28
