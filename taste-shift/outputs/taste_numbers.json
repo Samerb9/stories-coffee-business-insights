@@ -1,0 +1,131 @@
+{
+  "items_tested": 45,
+  "significant_monthly_p05": 5,
+  "expected_by_chance": 2.25,
+  "movers": {
+    "Strawberry Matcha": {
+      "category": "Matcha & Tea",
+      "share_jan": 0.1621,
+      "share_jun": 0.2101,
+      "change_pts": 4.8,
+      "p_monthly": 0.002,
+      "p_daily": 0.0032
+    },
+    "Brownie": {
+      "category": "Desserts",
+      "share_jan": 0.254,
+      "share_jun": 0.2859,
+      "change_pts": 3.19,
+      "p_monthly": 0.0453,
+      "p_daily": 0.0211
+    },
+    "Chocolate Croissant": {
+      "category": "Bakery",
+      "share_jan": 0.113,
+      "share_jun": 0.1423,
+      "change_pts": 2.92,
+      "p_monthly": 0.0032,
+      "p_daily": 0.0025
+    },
+    "Cappuccino": {
+      "category": "Hot Coffee",
+      "share_jan": 0.2038,
+      "share_jun": 0.1893,
+      "change_pts": -1.45,
+      "p_monthly": 0.0433,
+      "p_daily": 0.028
+    },
+    "Iced Matcha": {
+      "category": "Matcha & Tea",
+      "share_jan": 0.3194,
+      "share_jun": 0.2745,
+      "change_pts": -4.49,
+      "p_monthly": 0.0065,
+      "p_daily": 0.0122
+    }
+  },
+  "movers_significant_in_both_tests": [
+    "Chocolate Croissant",
+    "Brownie",
+    "Cappuccino",
+    "Iced Matcha",
+    "Strawberry Matcha"
+  ],
+  "borderline_items": {
+    "Iced Americano": {
+      "p_monthly": 0.0577,
+      "p_daily": 0.0415,
+      "change_pts": 2.87
+    },
+    "Caramel Latte": {
+      "p_monthly": 0.08,
+      "p_daily": 0.1181,
+      "change_pts": 2.53
+    }
+  },
+  "min_p_after_correction": {
+    "monthly": 0.0719,
+    "daily": 0.0719
+  },
+  "share_items_same_direction_all_branches": 0.2667,
+  "same_direction_by_chance": 0.25,
+  "reversal_correlation": -0.5941,
+  "share_items_kept_direction": 0.2889,
+  "watchlist_from_jan_may": [
+    "Chocolate Croissant",
+    "Brownie",
+    "Cappuccino",
+    "Iced Matcha"
+  ],
+  "june_test": {
+    "Copy last month's mix": {
+      "error": 0.1144,
+      "units_misplanned": 1257.2,
+      "lo95": 0.0988,
+      "hi95": 0.1309,
+      "error_on_watchlist_items": 0.0546
+    },
+    "Fit a trend for every item": {
+      "error": 0.1159,
+      "units_misplanned": 1273.1,
+      "lo95": 0.101,
+      "hi95": 0.1319,
+      "error_on_watchlist_items": 0.0735
+    },
+    "Average of the last 5 months": {
+      "error": 0.0928,
+      "units_misplanned": 1019.9,
+      "lo95": 0.0815,
+      "hi95": 0.1051,
+      "error_on_watchlist_items": 0.0754
+    },
+    "5-month average + watchlist": {
+      "error": 0.0926,
+      "units_misplanned": 1017.4,
+      "lo95": 0.0808,
+      "hi95": 0.1063,
+      "error_on_watchlist_items": 0.0735
+    }
+  },
+  "last_minus_avg_pts": [
+    2.15,
+    0.82,
+    3.49
+  ],
+  "trend_minus_avg_pts": [
+    2.3,
+    0.83,
+    3.82
+  ],
+  "relative_error_reduction_vs_last_month": 0.1908,
+  "daily_level_error": {
+    "Copy last month's mix": 0.4427,
+    "Fit a trend for every item": 0.4423,
+    "Average of the last 5 months": 0.4359,
+    "5-month average + watchlist": 0.4364
+  },
+  "units_saved_june": 239.8,
+  "avg_unit_cost": 2.34,
+  "yearly_value_upper_bound": 6731.0,
+  "mix_shift_profit_effect_per_month_at_june_volumes": -60.3
+}
