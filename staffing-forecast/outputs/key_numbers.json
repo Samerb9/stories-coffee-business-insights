@@ -1,0 +1,718 @@
+{
+  "estimated": {
+    "busiest_hour_of_week": {
+      "source_step": "final fit",
+      "unit": "",
+      "value": {
+        "Garden": "Tue 21:00",
+        "Harbour": "Tue 21:00",
+        "Uptown": "Tue 21:00"
+      }
+    },
+    "fitted_growth_jan1_to_jun30": {
+      "source_step": "final fit",
+      "unit": "[share, 95% CI]",
+      "value": {
+        "Garden": [
+          0.6237,
+          [
+            0.5675,
+            0.6836
+          ]
+        ],
+        "Harbour": [
+          0.6237,
+          [
+            0.5675,
+            0.6836
+          ]
+        ],
+        "Uptown": [
+          0.6237,
+          [
+            0.5675,
+            0.6836
+          ]
+        ]
+      }
+    },
+    "fitted_weekly_growth_at_jun30": {
+      "source_step": "final fit",
+      "unit": "[share/week, 95% CI]",
+      "value": {
+        "Garden": [
+          0.019,
+          [
+            0.0176,
+            0.0205
+          ]
+        ],
+        "Harbour": [
+          0.019,
+          [
+            0.0176,
+            0.0205
+          ]
+        ],
+        "Uptown": [
+          0.019,
+          [
+            0.0176,
+            0.0205
+          ]
+        ]
+      }
+    },
+    "peak_forecast": {
+      "source_step": "forecast",
+      "unit": "[expected, exp lo80, exp hi80, one-hour lo80, one-hour hi80]",
+      "value": {
+        "Garden Aug": [
+          16.81,
+          16.14,
+          17.5,
+          12.0,
+          22.0
+        ],
+        "Garden Jul": [
+          15.59,
+          14.99,
+          16.21,
+          10.0,
+          21.0
+        ],
+        "Garden Oct": [
+          19.92,
+          19.04,
+          20.83,
+          14.0,
+          26.0
+        ],
+        "Garden Sep": [
+          18.3,
+          17.54,
+          19.1,
+          13.0,
+          24.0
+        ],
+        "Harbour Aug": [
+          24.3,
+          23.46,
+          25.22,
+          18.0,
+          31.0
+        ],
+        "Harbour Jul": [
+          22.54,
+          21.79,
+          23.34,
+          17.0,
+          29.0
+        ],
+        "Harbour Oct": [
+          28.8,
+          27.68,
+          30.04,
+          22.0,
+          36.0
+        ],
+        "Harbour Sep": [
+          26.46,
+          25.48,
+          27.53,
+          20.0,
+          33.0
+        ],
+        "Uptown Aug": [
+          9.72,
+          9.27,
+          10.22,
+          6.0,
+          14.0
+        ],
+        "Uptown Jul": [
+          9.01,
+          8.6,
+          9.48,
+          5.0,
+          13.0
+        ],
+        "Uptown Oct": [
+          11.52,
+          10.95,
+          12.15,
+          7.0,
+          16.0
+        ],
+        "Uptown Sep": [
+          10.58,
+          10.08,
+          11.15,
+          7.0,
+          15.0
+        ]
+      }
+    },
+    "saturday_multiplier": {
+      "source_step": "final fit",
+      "unit": "[x normal weekday, 95% CI]",
+      "value": [
+        0.694,
+        [
+          0.6695,
+          0.7188
+        ]
+      ]
+    },
+    "tuesday_multiplier": {
+      "source_step": "final fit",
+      "unit": "[x normal weekday, 95% CI]",
+      "value": [
+        1.522,
+        [
+          1.4807,
+          1.5598
+        ]
+      ]
+    }
+  },
+  "measured": {
+    "best_ml_model": {
+      "source_step": "choice rule",
+      "unit": "",
+      "value": "M2 gradient boosting"
+    },
+    "chart1_week_start": {
+      "source_step": "charts",
+      "unit": "",
+      "value": "2026-06-15"
+    },
+    "chosen_model": {
+      "source_step": "choice rule",
+      "unit": "",
+      "value": "M1 Poisson GLM"
+    },
+    "diag_all_days_ratio_sd": {
+      "source_step": "diagnostics",
+      "unit": "sd of daily ratio",
+      "value": 0.074
+    },
+    "diag_holiday_actual_over_fitted": {
+      "source_step": "diagnostics",
+      "unit": "ratio (1 = as expected)",
+      "value": {
+        "2026-01-01 New Year": 1.087,
+        "2026-01-06 Armenian Christmas": 1.02,
+        "2026-02-09 St Maroun": 1.033,
+        "2026-03-20 Eid al-Fitr (approx.)": 0.847,
+        "2026-03-25 Annunciation": 0.983,
+        "2026-04-03 Good Friday (Western)": 1.17,
+        "2026-04-10 Good Friday (Orthodox)": 0.94,
+        "2026-05-01 Labour Day": 1.184,
+        "2026-05-25 Liberation Day": 0.966,
+        "2026-05-27 Eid al-Adha (approx.)": 1.002,
+        "2026-06-16 Islamic New Year (approx.)": 0.967
+      }
+    },
+    "diag_month_actual_over_fitted": {
+      "source_step": "diagnostics",
+      "unit": "ratio",
+      "value": {
+        "1": 0.977,
+        "2": 1.006,
+        "3": 1.013,
+        "4": 0.995,
+        "5": 1.007,
+        "6": 0.998
+      }
+    },
+    "diag_ramadan_actual_over_fitted": {
+      "source_step": "diagnostics",
+      "unit": "mean daily ratio",
+      "value": 1.011
+    },
+    "diag_share_days_outside_15pct": {
+      "source_step": "diagnostics",
+      "unit": "share of 181 days",
+      "value": 0.055
+    },
+    "dispersion_may_residuals": {
+      "source_step": "round 1",
+      "unit": "ratio",
+      "value": 1.038
+    },
+    "dispersion_train_pearson": {
+      "source_step": "round 1",
+      "unit": "ratio",
+      "value": 1.007
+    },
+    "horizon_test": {
+      "source_step": "horizon test",
+      "unit": "weekly total error, bias",
+      "value": {
+        "1 months ahead": {
+          "bias": -0.0034,
+          "branch_weeks": 51,
+          "tests": 4,
+          "weekly_error": 0.0408
+        },
+        "2 months ahead": {
+          "bias": 0.0054,
+          "branch_weeks": 36,
+          "tests": 3,
+          "weekly_error": 0.0321
+        },
+        "3 months ahead": {
+          "bias": 0.0088,
+          "branch_weeks": 24,
+          "tests": 2,
+          "weekly_error": 0.0358
+        },
+        "4 months ahead": {
+          "bias": -0.0034,
+          "branch_weeks": 12,
+          "tests": 1,
+          "weekly_error": 0.0291
+        }
+      }
+    },
+    "interval_distribution": {
+      "source_step": "round 1",
+      "unit": "",
+      "value": "Poisson"
+    },
+    "june_actual_peak_hour_max": {
+      "source_step": "thresholds",
+      "unit": "visits/hour",
+      "value": {
+        "Garden": 16,
+        "Harbour": 26,
+        "Uptown": 13
+      }
+    },
+    "june_actual_peak_hour_mean": {
+      "source_step": "thresholds",
+      "unit": "visits/hour",
+      "value": {
+        "Garden": 13.0,
+        "Harbour": 22.2,
+        "Uptown": 7.4
+      }
+    },
+    "june_busiest_hour_ceiling": {
+      "source_step": "round 2",
+      "unit": "[exact, +-1h]",
+      "value": [
+        0.558,
+        0.873
+      ]
+    },
+    "june_model_peak_hour_mean": {
+      "source_step": "charts",
+      "unit": "visits/hour (final model, June Tuesdays)",
+      "value": {
+        "Garden": 14.32,
+        "Harbour": 20.71,
+        "Uptown": 8.28
+      }
+    },
+    "june_test": {
+      "source_step": "round 2",
+      "unit": "see backtest.csv",
+      "value": {
+        "B1 last week": {
+          "avoidable_error_removed": -0.8572,
+          "bias": -0.0372,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.4111,
+          "busiest_hit_pm1": 0.7444,
+          "coverage_80": 0.6902,
+          "coverage_95": 0.8366,
+          "daily_wape": 0.116,
+          "flag_Garden": "False",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 2.2059,
+          "peak_bias": -0.0053,
+          "peak_mae": 2.8833,
+          "peak_rmse": 3.7171,
+          "peak_wape": 0.396,
+          "peak_wape_floor": 0.2812,
+          "rmse": 2.9602,
+          "top10act_bias": -0.2421,
+          "top10act_mae": 4.2614,
+          "top10act_wape": 0.3446,
+          "top10pred_bias": -0.0127,
+          "top10pred_mae": 3.6797,
+          "top10pred_wape": 0.3406,
+          "wape": 0.4887,
+          "wape_Garden": 0.5526,
+          "wape_Harbour": 0.404,
+          "wape_Uptown": 0.6013,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.0333,
+          "weekly_ape_partial_week": 0.0813
+        },
+        "B1r last week (rolling)": {
+          "avoidable_error_removed": -0.9622,
+          "bias": -0.0087,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.3556,
+          "busiest_hit_pm1": 0.7333,
+          "coverage_80": 0.6902,
+          "coverage_95": 0.8386,
+          "daily_wape": 0.1251,
+          "flag_Garden": "False",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 2.2392,
+          "peak_bias": 0.0004,
+          "peak_mae": 3.0472,
+          "peak_rmse": 3.9097,
+          "peak_wape": 0.4185,
+          "peak_wape_floor": 0.2812,
+          "rmse": 3.0224,
+          "top10act_bias": -0.2368,
+          "top10act_mae": 4.366,
+          "top10act_wape": 0.3531,
+          "top10pred_bias": -0.0079,
+          "top10pred_mae": 3.9412,
+          "top10pred_wape": 0.3648,
+          "wape": 0.4961,
+          "wape_Garden": 0.5229,
+          "wape_Harbour": 0.4268,
+          "wape_Uptown": 0.6336,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.0421,
+          "weekly_ape_partial_week": 0.0747
+        },
+        "B2 4-week avg": {
+          "avoidable_error_removed": 0.5114,
+          "bias": -0.0752,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.4889,
+          "busiest_hit_pm1": 0.8222,
+          "coverage_80": 0.8333,
+          "coverage_95": 0.9412,
+          "daily_wape": 0.1147,
+          "flag_Garden": "False",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 1.7716,
+          "peak_bias": -0.0386,
+          "peak_mae": 2.2812,
+          "peak_rmse": 2.9796,
+          "peak_wape": 0.3133,
+          "peak_wape_floor": 0.2812,
+          "rmse": 2.3789,
+          "top10act_bias": -0.271,
+          "top10act_mae": 3.799,
+          "top10act_wape": 0.3072,
+          "top10pred_bias": -0.0383,
+          "top10pred_mae": 2.7925,
+          "top10pred_wape": 0.2585,
+          "wape": 0.3925,
+          "wape_Garden": 0.4215,
+          "wape_Harbour": 0.3263,
+          "wape_Uptown": 0.5177,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.0621,
+          "weekly_ape_partial_week": 0.1333
+        },
+        "B2r 4-week avg (rolling)": {
+          "avoidable_error_removed": 0.4646,
+          "bias": -0.0443,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.4667,
+          "busiest_hit_pm1": 0.8667,
+          "coverage_80": 0.8346,
+          "coverage_95": 0.9464,
+          "daily_wape": 0.0989,
+          "flag_Garden": "True",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 1.7864,
+          "peak_bias": -0.0261,
+          "peak_mae": 2.3347,
+          "peak_rmse": 3.0504,
+          "peak_wape": 0.3207,
+          "peak_wape_floor": 0.2812,
+          "rmse": 2.3872,
+          "top10act_bias": -0.2566,
+          "top10act_mae": 3.7974,
+          "top10act_wape": 0.3071,
+          "top10pred_bias": -0.0271,
+          "top10pred_mae": 2.9395,
+          "top10pred_wape": 0.2721,
+          "wape": 0.3958,
+          "wape_Garden": 0.4296,
+          "wape_Harbour": 0.3275,
+          "wape_Uptown": 0.5179,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.0418,
+          "weekly_ape_partial_week": 0.0692
+        },
+        "B3 flat avg": {
+          "avoidable_error_removed": 0.0,
+          "bias": -0.2238,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.5778,
+          "busiest_hit_pm1": 0.9111,
+          "coverage_80": 0.7869,
+          "coverage_95": 0.9196,
+          "daily_wape": 0.2641,
+          "flag_Garden": "False",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 1.9339,
+          "peak_bias": -0.1906,
+          "peak_mae": 2.6985,
+          "peak_rmse": 3.6487,
+          "peak_wape": 0.3706,
+          "peak_wape_floor": 0.2812,
+          "rmse": 2.7423,
+          "top10act_bias": -0.4545,
+          "top10act_mae": 5.6207,
+          "top10act_wape": 0.4545,
+          "top10pred_bias": -0.2942,
+          "top10pred_mae": 4.0177,
+          "top10pred_wape": 0.3719,
+          "wape": 0.4284,
+          "wape_Garden": 0.4392,
+          "wape_Harbour": 0.3866,
+          "wape_Uptown": 0.5209,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.1999,
+          "weekly_ape_partial_week": 0.3934
+        },
+        "M1 Poisson GLM": {
+          "avoidable_error_removed": 0.9956,
+          "bias": 0.0038,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.5778,
+          "busiest_hit_pm1": 0.9111,
+          "coverage_80": 0.8745,
+          "coverage_95": 0.9732,
+          "daily_wape": 0.0883,
+          "flag_Garden": "True",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 1.6179,
+          "peak_bias": 0.0467,
+          "peak_mae": 2.187,
+          "peak_rmse": 2.7979,
+          "peak_wape": 0.3004,
+          "peak_wape_floor": 0.2812,
+          "rmse": 2.1608,
+          "top10act_bias": -0.2154,
+          "top10act_mae": 3.316,
+          "top10act_wape": 0.2682,
+          "top10pred_bias": 0.033,
+          "top10pred_mae": 2.7068,
+          "top10pred_wape": 0.2505,
+          "wape": 0.3584,
+          "wape_Garden": 0.387,
+          "wape_Harbour": 0.2968,
+          "wape_Uptown": 0.4722,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.034,
+          "weekly_ape_partial_week": 0.0239
+        },
+        "M2 gradient boosting": {
+          "avoidable_error_removed": 0.9867,
+          "bias": -0.0303,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.5778,
+          "busiest_hit_pm1": 0.9111,
+          "coverage_80": 0.8693,
+          "coverage_95": 0.9712,
+          "daily_wape": 0.0919,
+          "flag_Garden": "True",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 1.6207,
+          "peak_bias": -0.0032,
+          "peak_mae": 2.1723,
+          "peak_rmse": 2.8083,
+          "peak_wape": 0.2984,
+          "peak_wape_floor": 0.2812,
+          "rmse": 2.1787,
+          "top10act_bias": -0.2302,
+          "top10act_mae": 3.4934,
+          "top10act_wape": 0.2825,
+          "top10pred_bias": 0.0155,
+          "top10pred_mae": 2.733,
+          "top10pred_wape": 0.253,
+          "wape": 0.3591,
+          "wape_Garden": 0.3873,
+          "wape_Harbour": 0.299,
+          "wape_Uptown": 0.4693,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.0391,
+          "weekly_ape_partial_week": 0.0966
+        },
+        "M2b GLM trend + boosting": {
+          "avoidable_error_removed": 0.9771,
+          "bias": 0.0038,
+          "busiest_hit_ceiling_exact": 0.5584,
+          "busiest_hit_ceiling_pm1": 0.8725,
+          "busiest_hit_exact": 0.5778,
+          "busiest_hit_pm1": 0.9111,
+          "coverage_80": 0.8765,
+          "coverage_95": 0.9712,
+          "daily_wape": 0.0897,
+          "flag_Garden": "True",
+          "flag_Harbour": "False",
+          "flag_Uptown": "False",
+          "mae": 1.6238,
+          "peak_bias": 0.0457,
+          "peak_mae": 2.1981,
+          "peak_rmse": 2.8172,
+          "peak_wape": 0.3019,
+          "peak_wape_floor": 0.2812,
+          "rmse": 2.1752,
+          "top10act_bias": -0.2162,
+          "top10act_mae": 3.3885,
+          "top10act_wape": 0.274,
+          "top10pred_bias": 0.0346,
+          "top10pred_mae": 2.7489,
+          "top10pred_wape": 0.2544,
+          "wape": 0.3597,
+          "wape_Garden": 0.3866,
+          "wape_Harbour": 0.2995,
+          "wape_Uptown": 0.4728,
+          "wape_floor": 0.3581,
+          "wape_floor_Garden": 0.3662,
+          "wape_floor_Harbour": 0.3037,
+          "wape_floor_Uptown": 0.4818,
+          "weekly_ape_full_weeks": 0.0352,
+          "weekly_ape_partial_week": 0.0287
+        }
+      }
+    },
+    "june_wape_floor": {
+      "source_step": "round 2",
+      "unit": "share",
+      "value": {
+        "Garden": 0.3662,
+        "Harbour": 0.3037,
+        "Uptown": 0.4818,
+        "overall": 0.3581,
+        "peak": 0.2812
+      }
+    },
+    "m1_minus_ml_wape_pp": {
+      "source_step": "choice rule",
+      "unit": "percentage points",
+      "value": -0.06
+    },
+    "m1_version_chosen_on_may": {
+      "source_step": "round 1",
+      "unit": "",
+      "value": "M1-noDH"
+    },
+    "m2_settings": {
+      "source_step": "round 1",
+      "unit": "",
+      "value": {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "max_iter": 300
+      }
+    },
+    "m2b_settings": {
+      "source_step": "round 1",
+      "unit": "",
+      "value": {
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "max_iter": 300
+      }
+    },
+    "n_duplicates": {
+      "source_step": "load",
+      "unit": "lines",
+      "value": 132
+    },
+    "n_raw_rows": {
+      "source_step": "load",
+      "unit": "lines",
+      "value": 51177
+    },
+    "n_receipts": {
+      "source_step": "load",
+      "unit": "receipts",
+      "value": 33887
+    },
+    "n_table_rows": {
+      "source_step": "table",
+      "unit": "branch-hours",
+      "value": 9231
+    },
+    "projection_model": {
+      "source_step": "round 3",
+      "unit": "",
+      "value": "M1-noDH refit on Jan-Jun"
+    },
+    "raw_growth_jan_to_jun": {
+      "source_step": "table",
+      "unit": "share",
+      "value": 0.5701
+    },
+    "raw_mean_visits_per_hour_by_month": {
+      "source_step": "table",
+      "unit": "visits/hour",
+      "value": {
+        "1": 2.875,
+        "2": 3.235,
+        "3": 3.56,
+        "4": 3.758,
+        "5": 4.073,
+        "6": 4.514
+      }
+    },
+    "raw_saturday_vs_normal_weekday": {
+      "source_step": "table",
+      "unit": "ratio",
+      "value": 0.694
+    },
+    "raw_tuesday_vs_normal_weekday": {
+      "source_step": "table",
+      "unit": "ratio",
+      "value": 1.535
+    },
+    "share_zero_hours": {
+      "source_step": "table",
+      "unit": "share",
+      "value": 0.0927
+    }
+  }
+}
