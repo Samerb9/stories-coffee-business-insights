@@ -3,8 +3,8 @@
 Usage inside an analysis module:
 
     from .numbers import Recorder
-    rec = Recorder("f1_garden_cost")
-    rec.record("garden_gm", 0.469, "MEASURED", display="46.9%", note="Jan-Jun 2026 gross margin")
+    rec = Recorder("audit")
+    rec.record("rows_raw", 51177, "MEASURED", display="51,177", note="lines in the raw file")
     rec.save()
 
 Each module writes outputs/numbers/<module>.json (so two people never edit the same file).

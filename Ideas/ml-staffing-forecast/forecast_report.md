@@ -12,8 +12,6 @@ Stories' customer flow is very predictable. Our model forecasts each branch's we
 
 A rota built from the forecast needs **389 staff-hours a week in October**, against 714 for two people on every shift. If Stories runs two people all day today and one person may legally run a quiet hour, that's worth about **$67k a year** at $4 an hour, while losing under 1% of customers to queues **[ESTIMATED]**. If two people must always be present, the saving disappears. Then the forecast's value is timing the extra evening staff at Harbour, which costs about $50 a week in lost profit if skipped **[ESTIMATED]**.
 
-Separately, Garden's recorded unit costs are exactly **1.43× Harbour's on all 45 products**, even bottled water, so its margin looks like 47% instead of about 63% **[MEASURED]**. That is either about **$32k a year** of overpayment or a cost-allocation error that misstates Garden's profit **[ESTIMATED]**. One month of supplier invoices would settle it.
-
 ---
 
 ## 1. The business problem
@@ -204,7 +202,7 @@ The expected number above capacity comes from the forecast's Poisson distributio
 
 ## 8. Alternative explanations checked
 
-- **Is the growth real demand, or bigger baskets?** Spend per receipt (about $9.0) and items per receipt (about 1.59) stayed flat from January to June **[MEASURED]**. The growth is more customers, and it is the same at all three branches. The data doesn't say why: marketing, a delivery app or a new neighbourhood would all look the same. The forecast only needs the growth to continue, and §15 shows how to catch it if it stops.
+- **Is the growth real demand, or bigger baskets?** Spend per receipt (about $9.0) and items per receipt (about 1.59) stayed flat from January to June **[MEASURED]**. The growth is more customers, and it is the same at all three branches. The data doesn't say why: marketing, a delivery app or a new neighbourhood would all look the same. The forecast only needs the growth to continue, and §14 shows how to catch it if it stops.
 - **Are evenings already at capacity?**
   - Evening hours (19–23h) grew more slowly than daytime: Harbour +51% against +66%, Garden +52% against +57%, Uptown +49% against +54% **[MEASURED]**.
   - In a model with separate growth, evening growth is 1.7% a week against 2.0% for daytime (p = 0.07, borderline).
@@ -214,7 +212,7 @@ The expected number above capacity comes from the forecast's Poisson distributio
   - (a) Queues are already turning evening customers away, which would mean demand is higher than receipts show and **more** evening staff would raise sales.
   - (b) Daytime customers are simply growing faster.
 
-  Note that the busiest single hour, Tuesday 21:00, grew as fast as everything else (+58% against +56%), which argues against a hard ceiling. The pilot in §11 separates (a) from (b).
+  Note that the busiest single hour, Tuesday 21:00, grew as fast as everything else (+58% against +56%), which argues against a hard ceiling. The pilot in §10 separates (a) from (b).
 - **Why Tuesday?** Tuesday is 1.52× a normal weekday and Saturday is 0.69× (95% CIs 1.48–1.56 and 0.67–0.72) **[ESTIMATED: model]**. The effect is identical at every branch and hour. That pattern is a correlation with the day, not a known cause. The rota should follow it, but no promotion should be planned on a guessed cause until Stories confirms what happens on Tuesdays.
 - **Holidays and Ramadan:** over Ramadan, visits were 1.01× the model's expectation. Single holidays ranged from 0.85× to 1.18×, within the normal day-to-day spread (standard deviation ±7.4%) **[MEASURED]**.
 - **Receipts aren't people:** a group paying together counts once. For staffing the till and the bar, receipts are the right unit. For seating, they understate headcount.
@@ -231,23 +229,7 @@ The expected number above capacity comes from the forecast's Poisson distributio
 | Lag features ("visits last hour") | Don't exist months ahead. |
 | Change opening hours | Mornings are quiet (07–10h is about 10% of customers), but judging that needs rent and fixed costs per hour, which we don't have. |
 
-## 10. Second finding: Garden's costs [MEASURED unless marked]
-
-- Garden's unit cost is **1.43× Harbour's on all 45 products** (range 1.426–1.439, rounding to cents), in every category, **including still and sparkling water** (1.43×). Uptown's costs are 0.95–0.97× Harbour's.
-- Prices are the opposite: Garden charges **0.95×** Harbour's prices.
-- Garden sold **32% fewer units** than Harbour but recorded **the same total cost of goods**: $52.8k against $52.6k (+0.4%). The monthly ratio stayed between 0.97 and 1.06.
-- Garden's gross margin is **46.9%**, against 65.0% at Harbour and 62.6% at Uptown.
-- **Product mix doesn't explain it:** with Harbour's mix, Garden's margin would still be 47.8%. At Harbour's costs it would be **62.9%**.
-- **Size of the gap:** **$15.9k for January–June**, about **$32k a year [ESTIMATED]**.
-
-**Explanations:**
-1. Garden really pays more, through a different supplier or delivery charges. But an identical ×1.43 on bottled water and croissants alike is not how real price differences look.
-2. Waste or spoilage is booked into unit cost. That would hit fresh items harder than sealed water, and it doesn't.
-3. **A shared cost pool is split equally between Garden and Harbour.** This fits: equal totals despite unequal sales.
-
-If (1), the fix is worth about $32k a year. If (3), no cash is lost, but Garden's profit is understated by about 16 points. That matters before any decision to reprice, cut or close Garden.
-
-## 11. A practical test before wider use
+## 10. A practical test before wider use
 
 1. **Capacity study (1 week, Harbour):** time how many orders one barista completes in a busy hour. This replaces the 12-per-hour assumption, the input the decision is most sensitive to after the minimum crew.
 2. **Rota pilot (4 weeks):**
@@ -255,20 +237,19 @@ If (1), the fix is worth about $32k a year. If (3), no cash is lost, but Garden'
    - **Measure:** staff-hours, receipts per hour against the forecast's 80% range, and walk-outs counted by staff on Tuesday and Friday 19–23h.
    - **Adopt if:** staff-hours fall while Harbour's sales stay in line with Garden's trend (a difference-in-differences).
    - **Bonus:** a temporary extra evening person tests §8(a). If evening sales rise above forecast, demand was being turned away.
-3. **Garden invoices (1 day):** compare one month of supplier invoices for water, milk and croissants at Garden and Harbour. This settles §10.
-4. **Rules:** confirm whether one person may run a branch alone. This is the assumption that decides whether the rota saves money (§7).
+3. **Rules:** confirm whether one person may run a branch alone. This is the assumption that decides whether the rota saves money (§7).
 
-## 12. Assumptions, separated from facts
+## 11. Assumptions, separated from facts
 
 | Measured facts | Assumptions |
 |---|---|
 | Visits per branch × hour, Jan–Jun; growth +57%; Tuesday ×1.5, Saturday ×0.7 | 1 receipt = 1 customer visit |
 | Test accuracy (June; 1–4 months ahead) | Growth continues at the Jan–Jun rate to October |
 | Gross profit per receipt by branch | 12 customers per staff-hour |
-| Garden unit costs ×1.43 Harbour | $4 per staff-hour; 50% of over-capacity customers leave; minimum crew of 1 |
+| Busiest hour: Tuesday 21:00 at every branch | $4 per staff-hour; 50% of over-capacity customers leave; minimum crew of 1 |
 | | Stories' current rota (two people all day) for the $67k comparison |
 
-## 13. Weak areas and possible failures
+## 12. Weak areas and possible failures
 
 - **Only 6 months of data,** so there's no yearly seasonality (summer, holidays). The forecast could miss a seasonal swing.
 - **The test evidence is thin at long range:** the 4-month accuracy rests on one test, and the 1–3-month figures on 2–4 tests.
@@ -279,29 +260,27 @@ If (1), the fix is worth about $32k a year. If (3), no cash is lost, but Garden'
   - The Tuesday effect is perfectly uniform, customer IDs look randomly assigned, and transaction IDs aren't in time order.
   - These may come from anonymisation. If parts of the data were generated, the patterns describe the generator.
 
-## 14. Missing information
+## 13. Missing information
 
 - Real service capacity per barista
 - Current rota and wages
 - Labour rules on lone working
 - Wait times and walk-outs
 - Rent and fixed costs per hour
-- Supplier invoices for Garden
 - Holiday and event calendar
 - What happens on Tuesdays
 
-## 15. Keeping the forecast honest
+## 14. Keeping the forecast honest
 
 - **Weekly:** compare actual customers per branch with the forecast. Several weeks off by more than about 4% means the trend has changed.
 - **Monthly:** refit on all data, roll the forecast 4 months ahead, and rebuild the rota with `staffing.py`. Check that about 20% of hours fall outside the 80% range.
 
-## 16. How to reproduce
+## 15. How to reproduce
 
 ```bash
 pip install -r requirements.txt
 python forecast.py      # clean -> model -> tests -> forecast (about 20 s)
 python staffing.py      # rota, costs, sensitivity (about 5 s)
-python cost_check.py    # Garden cost finding (about 2 s)
 ```
 
 Then open `app/index.html` in a browser to explore any branch and day, including staff needed per hour.
@@ -311,6 +290,5 @@ Then open `app/index.html` in a browser to explore any branch and day, including
 | `backtest.csv`, `tuning_may.csv`, `horizon_test.csv` | all test results |
 | `forecast_heatmap.csv`, `busiest_hours_july.csv`, `peak_forecast.csv`, `thresholds.csv` | the Jul–Oct forecast |
 | `staffing_plan.csv`, `staffing_summary.csv`, `staffing_sensitivity.csv`, `staffing_numbers.json` | the staffing decision |
-| `cost_check.csv`, `cost_check.json` | the Garden cost finding |
 | `model.json`, `model_coefficients.csv`, `key_numbers.json` | the trained model and every forecast number |
 | `chart1_june_fit.png`, `chart2_peak_forecast.png`, `chart3_staffing_october.png` | charts |
