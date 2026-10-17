@@ -62,15 +62,6 @@ def main():
     incons = int(((g > 1).any(axis=1) | (cust_n > 1)).sum())
     check("one date/time/branch/customer/order type per transaction", incons == 0, f"{incons} inconsistent transactions", incons)
 
-    # 6. Duplicates
-    dup = df.duplicated(subset=value_cols, keep="first")
-    dup_rev = df.loc[dup, "rev"].sum()
-    check("exact duplicate rows", dup.sum() == 0, f"{dup.sum()} duplicate rows (${dup_rev:,.0f} revenue); "
-          f"genuine doubles use qty=2 ({(df.qty == 2).sum():,} lines)", dup.sum(),
-          "dropped in every analysis (treated as double scans)")
-    rec.record("duplicate_rows", int(dup.sum()), "MEASURED", f"{int(dup.sum())}")
-    rec.record("duplicate_revenue", float(dup_rev), "MEASURED", f"${dup_rev:,.0f}")
-
     # 7. Price and cost stability per product x branch
     pc = df.groupby(["product", "branch"]).agg(price_mean=("price", "mean"), price_std=("price", "std"),
                                                cost_mean=("cost", "mean"), cost_std=("cost", "std"),

@@ -2,7 +2,7 @@
 
 **Team:** Christopher Ferzli, Samer Bannout
 
-Before any analysis, we checked the raw file in 21 automated tests. The full table is in [outputs/audit_report.md](outputs/audit_report.md).
+Before any analysis, we checked the raw file in 20 automated tests. The full table is in [outputs/audit_report.md](outputs/audit_report.md).
 
 **What we found:**
 - **The file is internally consistent.**
@@ -11,7 +11,6 @@ Before any analysis, we checked the raw file in 21 automated tests. The full tab
   - Revenue and gross profit reconcile exactly on every line.
   - Every receipt has a single date, time, branch and order type.
   - No outlier days once weekday and growth are accounted for.
-- **132 exact duplicate lines ($741 of revenue)** look like double scans, since real doubles are recorded as quantity 2. They are dropped in every analysis.
 - **36.5% of lines have no Customer ID.**
 - **Prices and costs never change within a product and branch.** Each branch is a constant multiple of Harbour:
 

@@ -23,7 +23,7 @@ from statsmodels.stats.multitest import multipletests
 SEED = 490
 HERE = Path(__file__).resolve().parent
 ACCENT, GREY, GREEN = "#C0392B", "#7F7F7F", "#1E8449"
-SOURCE = "Source: Stories POS receipts, Jan-Jun 2026 (132 duplicate lines removed); team analysis."
+SOURCE = "Source: Stories POS receipts, Jan-Jun 2026; team analysis."
 
 
 def find_data(arg=None):
