@@ -1,0 +1,136 @@
+product,branch,price_mean,price_std,cost_mean,cost_std,lines
+Almond Croissant,Garden,4.85,0.0,2.73,0.0,359
+Almond Croissant,Harbour,5.09,0.0,1.91,0.0,586
+Almond Croissant,Uptown,4.66,0.0,1.83,0.0,174
+Americano,Garden,3.15,0.0,1.03,0.0,327
+Americano,Harbour,3.31,0.0,0.72,0.0,535
+Americano,Uptown,3.02,0.0,0.69,0.0,204
+Avocado Toast,Garden,9.45,0.0,5.98,0.0,283
+Avocado Toast,Harbour,9.92,0.0,4.18,0.0,401
+Avocado Toast,Uptown,9.07,0.0,4.01,0.0,169
+Banana Bread,Garden,4.45,0.0,2.25,0.0,392
+Banana Bread,Harbour,4.67,0.0,1.57,0.0,596
+Banana Bread,Uptown,4.27,0.0,1.51,0.0,208
+Blueberry Muffin,Garden,3.9499999999999997,0.0,1.8700000000000003,0.0,294
+Blueberry Muffin,Harbour,4.15,0.0,1.31,0.0,440
+Blueberry Muffin,Uptown,3.79,0.0,1.26,0.0,140
+Brownie,Garden,5.15,0.0,3.39,0.0,531
+Brownie,Harbour,5.41,0.0,2.37,0.0,558
+Brownie,Uptown,4.94,0.0,2.28,0.0,173
+Butter Croissant,Garden,3.65,0.0,1.6299999999999997,0.0,663
+Butter Croissant,Harbour,3.83,0.0,1.14,0.0,1098
+Butter Croissant,Uptown,3.5,0.0,1.09,0.0,370
+Cappuccino,Garden,4.05,0.0,1.6,0.0,495
+Cappuccino,Harbour,4.25,0.0,1.12,0.0,796
+Cappuccino,Uptown,3.89,0.0,1.08,0.0,307
+Caramel Latte,Garden,5.75,0.0,2.67,0.0,349
+Caramel Latte,Harbour,6.04,0.0,1.87,0.0,493
+Caramel Latte,Uptown,5.52,0.0,1.8,0.0,207
+Chai Latte,Garden,5.25,0.0,2.12,0.0,357
+Chai Latte,Harbour,5.51,0.0,1.48,0.0,490
+Chai Latte,Uptown,5.04,0.0,1.42,0.0,211
+Cheesecake Slice,Garden,6.75,0.0,4.4,0.0,444
+Cheesecake Slice,Harbour,7.09,0.0,3.08,0.0,521
+Cheesecake Slice,Uptown,6.4799999999999995,0.0,2.96,0.0,174
+Chicken Pesto Sandwich,Garden,10.75,0.0,7.39,0.0,339
+Chicken Pesto Sandwich,Harbour,11.29,0.0,5.17,0.0,471
+Chicken Pesto Sandwich,Uptown,10.32,0.0,4.96,0.0,287
+Chicken Salad Bowl,Garden,12.45,0.0,8.08,0.0,173
+Chicken Salad Bowl,Harbour,13.07,0.0,5.65,0.0,240
+Chicken Salad Bowl,Uptown,11.949999999999998,0.0,5.42,0.0,101
+Chocolate Cookie,Garden,3.15,0.0,1.3,0.0,511
+Chocolate Cookie,Harbour,3.31,0.0,0.9099999999999999,0.0,765
+Chocolate Cookie,Uptown,3.02,0.0,0.87,0.0,313
+Chocolate Croissant,Garden,4.25,0.0,2.26,0.0,489
+Chocolate Croissant,Harbour,4.46,0.0,1.58,0.0,706
+Chocolate Croissant,Uptown,4.08,0.0,1.52,0.0,272
+Cinnamon Roll,Garden,5.15,0.0,3.2,0.0,431
+Cinnamon Roll,Harbour,5.41,0.0,2.24,0.0,738
+Cinnamon Roll,Uptown,4.94,0.0,2.15,0.0,265
+Classic Matcha,Garden,6.45,0.0,3.25,0.0,623
+Classic Matcha,Harbour,6.7700000000000005,0.0,2.27,0.0,923
+Classic Matcha,Uptown,6.19,0.0,2.18,0.0,334
+Coffee Frappe,Garden,6.55,0.0,3.62,0.0,304
+Coffee Frappe,Harbour,6.88,0.0,2.53,0.0,430
+Coffee Frappe,Uptown,6.29,0.0,2.43,0.0,170
+Cold Brew,Garden,5.15,0.0,1.66,0.0,437
+Cold Brew,Harbour,5.41,0.0,1.16,0.0,736
+Cold Brew,Uptown,4.94,0.0,1.11,0.0,247
+Egg Sandwich,Garden,8.15,0.0,4.45,0.0,326
+Egg Sandwich,Harbour,8.56,0.0,3.11,0.0,434
+Egg Sandwich,Uptown,7.819999999999999,0.0,2.9900000000000007,0.0,172
+English Breakfast Tea,Garden,3.45,0.0,0.82,0.0,128
+English Breakfast Tea,Harbour,3.62,0.0,0.57,0.0,245
+English Breakfast Tea,Uptown,3.31,0.0,0.55,0.0,75
+Espresso,Garden,2.6499999999999995,0.0,0.93,0.0,203
+Espresso,Harbour,2.78,0.0,0.65,0.0,327
+Espresso,Uptown,2.54,0.0,0.6200000000000001,0.0,117
+Flat White,Garden,4.35,0.0,1.77,0.0,420
+Flat White,Harbour,4.57,0.0,1.24,0.0,619
+Flat White,Uptown,4.18,0.0,1.19,0.0,257
+Fresh Orange Juice,Garden,5.75,0.0,3.03,0.0,318
+Fresh Orange Juice,Harbour,6.04,0.0,2.12,0.0,457
+Fresh Orange Juice,Uptown,5.52,0.0,2.04,0.0,176
+Frozen Yoghurt Cup,Garden,6.15,0.0,3.85,0.0,463
+Frozen Yoghurt Cup,Harbour,6.46,0.0,2.69,0.0,436
+Frozen Yoghurt Cup,Uptown,5.9,0.0,2.58,0.0,168
+Granola Yoghurt,Garden,7.85,0.0,4.75,0.0,176
+Granola Yoghurt,Harbour,8.24,0.0,3.32,0.0,272
+Granola Yoghurt,Uptown,7.54,0.0,3.19,0.0,101
+Halloumi Wrap,Garden,9.95,0.0,5.92,0.0,268
+Halloumi Wrap,Harbour,10.45,0.0,4.14,0.0,383
+Halloumi Wrap,Uptown,9.55,0.0,3.97,0.0,256
+Iced Americano,Garden,3.85,0.0,1.2299999999999998,0.0,484
+Iced Americano,Harbour,4.04,0.0,0.86,0.0,722
+Iced Americano,Uptown,3.7,0.0,0.83,0.0,257
+Iced Latte,Garden,5.35,0.0,2.37,0.0,769
+Iced Latte,Harbour,5.62,0.0,1.66,0.0,1250
+Iced Latte,Uptown,5.14,0.0,1.59,0.0,443
+Iced Matcha,Garden,6.85,0.0,3.5899999999999994,0.0,726
+Iced Matcha,Harbour,7.19,0.0,2.51,0.0,1057
+Iced Matcha,Uptown,6.58,0.0,2.41,0.0,412
+Iced Mocha,Garden,6.25,0.0,3.19,0.0,345
+Iced Mocha,Harbour,6.56,0.0,2.23,0.0,499
+Iced Mocha,Uptown,6.0,0.0,2.14,0.0,209
+Lemonade,Garden,4.65,0.0,1.6700000000000002,0.0,330
+Lemonade,Harbour,4.88,0.0,1.17,0.0,469
+Lemonade,Uptown,4.46,0.0,1.12,0.0,174
+Mint Tea,Garden,3.65,0.0,0.9,0.0,187
+Mint Tea,Harbour,3.83,0.0,0.63,0.0,303
+Mint Tea,Uptown,3.5,0.0,0.6,0.0,108
+Peach Iced Tea,Garden,4.45,0.0,1.64,0.0,386
+Peach Iced Tea,Harbour,4.67,0.0,1.15,0.0,517
+Peach Iced Tea,Uptown,4.27,0.0,1.1,0.0,222
+Pistachio Cookie,Garden,3.45,0.0,1.69,0.0,402
+Pistachio Cookie,Harbour,3.62,0.0,1.18,0.0,617
+Pistachio Cookie,Uptown,3.31,0.0,1.13,0.0,250
+Quinoa Bowl,Garden,11.65,0.0,7.04,0.0,158
+Quinoa Bowl,Harbour,12.23,0.0,4.92,0.0,206
+Quinoa Bowl,Uptown,11.18,0.0,4.72,0.0,108
+Soup of the Day,Garden,7.15,0.0,3.99,0.0,138
+Soup of the Day,Harbour,7.51,0.0,2.7900000000000005,0.0,214
+Soup of the Day,Uptown,6.86,0.0,2.68,0.0,71
+Spanish Latte,Garden,5.95,0.0,2.83,0.0,397
+Spanish Latte,Harbour,6.25,0.0,1.98,0.0,584
+Spanish Latte,Uptown,5.709999999999999,0.0,1.8999999999999997,0.0,197
+Sparkling Water,Garden,2.75,0.0,1.9300000000000002,0.0,322
+Sparkling Water,Harbour,2.89,0.0,1.35,0.0,497
+Sparkling Water,Uptown,2.64,0.0,1.3000000000000003,0.0,198
+Still Water,Garden,1.95,0.0,0.93,0.0,359
+Still Water,Harbour,2.05,0.0,0.65,0.0,535
+Still Water,Uptown,1.87,0.0,0.62,0.0,238
+Strawberry Matcha,Garden,7.650000000000001,0.0,4.55,0.0,449
+Strawberry Matcha,Harbour,8.03,0.0,3.18,0.0,686
+Strawberry Matcha,Uptown,7.34,0.0,3.05,0.0,266
+Tiramisu Cup,Garden,6.55,0.0,4.08,0.0,420
+Tiramisu Cup,Harbour,6.88,0.0,2.85,0.0,399
+Tiramisu Cup,Uptown,6.29,0.0,2.74,0.0,148
+Tuna Sandwich,Garden,8.85,0.0,5.33,0.0,202
+Tuna Sandwich,Harbour,9.29,0.0,3.73,0.0,315
+Tuna Sandwich,Uptown,8.5,0.0,3.58,0.0,167
+Turkey & Cheese Sandwich,Garden,9.65,0.0,6.75,0.0,297
+Turkey & Cheese Sandwich,Harbour,10.13,0.0,4.72,0.0,440
+Turkey & Cheese Sandwich,Uptown,9.26,0.0,4.53,0.0,267
+Vanilla Latte,Garden,5.45,0.0,2.46,0.0,433
+Vanilla Latte,Harbour,5.72,0.0,1.72,0.0,648
+Vanilla Latte,Uptown,5.23,0.0,1.65,0.0,233

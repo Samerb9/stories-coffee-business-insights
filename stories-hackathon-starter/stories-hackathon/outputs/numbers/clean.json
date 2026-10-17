@@ -1,0 +1,58 @@
+{
+  "rows_raw": {
+    "value": 51177,
+    "tag": "MEASURED",
+    "display": "51,177",
+    "note": "",
+    "source": "src/clean.py"
+  },
+  "rows_clean": {
+    "value": 51045,
+    "tag": "MEASURED",
+    "display": "51,045",
+    "note": "",
+    "source": "src/clean.py"
+  },
+  "duplicates_dropped": {
+    "value": 132,
+    "tag": "MEASURED",
+    "display": "132",
+    "note": "",
+    "source": "src/clean.py"
+  },
+  "transactions": {
+    "value": 33887,
+    "tag": "MEASURED",
+    "display": "33,887",
+    "note": "",
+    "source": "src/clean.py"
+  },
+  "customers": {
+    "value": 3494,
+    "tag": "MEASURED",
+    "display": "3,494",
+    "note": "",
+    "source": "src/clean.py"
+  },
+  "date_min": {
+    "value": "2026-01-01",
+    "tag": "MEASURED",
+    "display": "2026-01-01",
+    "note": "",
+    "source": "src/clean.py"
+  },
+  "date_max": {
+    "value": "2026-06-30",
+    "tag": "MEASURED",
+    "display": "2026-06-30",
+    "note": "",
+    "source": "src/clean.py"
+  },
+  "share_single_item_baskets": {
+    "value": 0.5381709800218373,
+    "tag": "MEASURED",
+    "display": "54%",
+    "note": "",
+    "source": "src/clean.py"
+  }
+}
