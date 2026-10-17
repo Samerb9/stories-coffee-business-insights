@@ -16,7 +16,7 @@ Transaction data analysis for the EECE490 Stories Coffee Hackathon, exploring pr
 | 3 | Item mix planning | Plan each item's share from a 5-month average plus a monthly watchlist, not from last month | 19% fewer units mis-planned in a June test; at most ~$6.7k/year of waste | [`taste-shift/`](taste-shift/) |
 | 4 | Habit-building promotions | Judge promotions on 8-week profit; first run one randomised ~$500 test | a $471 discount returned an estimated $971–1,737 | [`promotion-habit/`](promotion-habit/) |
 
-All ideas start from a [data audit](data-audit/) (21 checks) and share one tested forecast of customers per branch per hour. It's accurate to 3–4% on weekly totals up to 4 months ahead, on months the model never saw.
+All ideas start from a [data audit](data-audit/) (20 checks) and share one tested forecast of customers per branch per hour. It's accurate to 3–4% on weekly totals up to 4 months ahead, on months the model never saw.
 
 ## Conclusion: Idea 1 (staffing)
 
@@ -44,7 +44,7 @@ Every dollar figure rests on stated assumptions. Each idea's report shows which 
 
 | Folder | Contents |
 |---|---|
-| [`data-audit/`](data-audit/) | 21 automated data-quality checks run before any analysis |
+| [`data-audit/`](data-audit/) | 20 automated data-quality checks run before any analysis |
 | [`staffing-forecast/`](staffing-forecast/) | Hourly customer forecast (shared by all ideas), staffing decision, Garden cost finding, browser app |
 | [`opening-hours/`](opening-hours/) | Opening and closing hours decision, tested on June, plus a late-night pilot design |
 | [`taste-shift/`](taste-shift/) | Item-mix trends within each category and the best planning rule, tested on June |

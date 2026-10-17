@@ -277,7 +277,6 @@ If (1), the fix is worth about $32k a year. If (3), no cash is lost, but Garden'
 - **Receipts can't show customers turned away,** so true evening demand may be higher than recorded.
 - **Data quality:**
   - The Tuesday effect is perfectly uniform, customer IDs look randomly assigned, and transaction IDs aren't in time order.
-  - 132 exact duplicate lines were removed.
   - These may come from anonymisation. If parts of the data were generated, the patterns describe the generator.
 
 ## 14. Missing information

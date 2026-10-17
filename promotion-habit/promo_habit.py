@@ -25,7 +25,7 @@ HERE = Path(__file__).resolve().parent
 POST_START = pd.Timestamp("2026-03-20")
 PRE_END = pd.Timestamp("2026-03-11")
 ACCENT, GREY, BLUE = "#C0392B", "#7F7F7F", "#2E6DB4"
-SOURCE = "Source: Stories POS receipts, Jan-Jun 2026 (duplicates removed); team analysis."
+SOURCE = "Source: Stories POS receipts, Jan-Jun 2026; team analysis."
 
 
 def find_data(arg=None):
