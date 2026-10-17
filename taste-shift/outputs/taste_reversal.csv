@@ -1,0 +1,46 @@
+cat,item,change_janfeb_to_marapr,change_marapr_to_mayjun,mover
+Bakery,Almond Croissant,-0.853,0.358,False
+Bakery,Banana Bread,0.541,-0.695,False
+Bakery,Blueberry Muffin,-0.608,0.266,False
+Bakery,Butter Croissant,0.120,0.282,False
+Bakery,Chocolate Cookie,-0.210,-0.867,False
+Bakery,Chocolate Croissant,1.369,0.832,True
+Bakery,Cinnamon Roll,-0.954,0.612,False
+Bakery,Pistachio Cookie,0.595,-0.788,False
+Breakfast,Avocado Toast,0.082,1.514,False
+Breakfast,Egg Sandwich,-0.979,0.717,False
+Breakfast,Granola Yoghurt,0.897,-2.231,False
+Cold Coffee,Coffee Frappe,-1.214,0.416,False
+Cold Coffee,Cold Brew,2.075,-1.843,False
+Cold Coffee,Iced Americano,1.595,0.840,False
+Cold Coffee,Iced Latte,-1.442,-0.618,False
+Cold Coffee,Iced Mocha,-1.014,1.204,False
+Cold Drinks,Fresh Orange Juice,0.539,0.492,False
+Cold Drinks,Lemonade,-0.885,-0.690,False
+Cold Drinks,Peach Iced Tea,0.882,-0.353,False
+Cold Drinks,Sparkling Water,-0.387,-0.317,False
+Cold Drinks,Still Water,-0.150,0.869,False
+Desserts,Brownie,4.159,-0.153,True
+Desserts,Cheesecake Slice,-3.149,0.708,False
+Desserts,Frozen Yoghurt Cup,-3.518,1.014,False
+Desserts,Tiramisu Cup,2.507,-1.568,False
+Hot Coffee,Americano,1.774,-1.450,False
+Hot Coffee,Cappuccino,-0.959,-1.028,True
+Hot Coffee,Caramel Latte,0.800,0.628,False
+Hot Coffee,Espresso,2.128,-1.591,False
+Hot Coffee,Flat White,-1.485,1.864,False
+Hot Coffee,Spanish Latte,-1.317,1.202,False
+Hot Coffee,Vanilla Latte,-0.940,0.377,False
+Matcha & Tea,Chai Latte,2.093,-1.873,False
+Matcha & Tea,Classic Matcha,-1.226,1.179,False
+Matcha & Tea,English Breakfast Tea,0.302,-0.202,False
+Matcha & Tea,Iced Matcha,-1.619,-1.579,True
+Matcha & Tea,Mint Tea,-0.900,0.928,False
+Matcha & Tea,Strawberry Matcha,1.350,1.547,True
+Meals,Chicken Salad Bowl,2.767,-2.168,False
+Meals,Quinoa Bowl,1.166,-0.242,False
+Meals,Soup of the Day,-3.932,2.410,False
+Sandwiches,Chicken Pesto Sandwich,-1.475,0.828,False
+Sandwiches,Halloumi Wrap,0.511,-1.569,False
+Sandwiches,Tuna Sandwich,-2.040,3.254,False
+Sandwiches,Turkey & Cheese Sandwich,3.004,-2.514,False

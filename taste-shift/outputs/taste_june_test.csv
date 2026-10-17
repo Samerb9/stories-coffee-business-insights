@@ -1,0 +1,5 @@
+rule,june_error,units_misplanned,error_on_watchlist_items,lo95,hi95
+Copy last month's mix,0.1144,1257.2382,0.0546,0.0988,0.1309
+Fit a trend for every item,0.1159,1273.1086,0.0735,0.1010,0.1319
+Average of the last 5 months,0.0928,1019.9082,0.0754,0.0815,0.1051
+5-month average + watchlist,0.0926,1017.3939,0.0735,0.0808,0.1063
