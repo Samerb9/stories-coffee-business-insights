@@ -1,0 +1,158 @@
+{
+  "assumptions": {
+    "hour_cost_usd": 8.0,
+    "shift_share": 0.0
+  },
+  "measured_gp_per_receipt_range_by_branch": {
+    "Garden": [
+      4.04,
+      4.36
+    ],
+    "Harbour": [
+      5.63,
+      6.22
+    ],
+    "Uptown": [
+      4.93,
+      5.73
+    ]
+  },
+  "oct_branch_hours_below_cost": 11,
+  "gp_per_day_07h_jan_vs_jun": {
+    "Garden": [
+      3.81,
+      6.8
+    ],
+    "Harbour": [
+      7.87,
+      15.49
+    ],
+    "Uptown": [
+      3.53,
+      6.41
+    ]
+  },
+  "yearly_gross_profit_all_branches": 360955.0,
+  "oct_min_gp_hour_after_6pm": 11.72,
+  "oct_min_gp_hour_after_6pm_ratio_to_cost": 1.47,
+  "oct_max_gp_hour_23h_ratio_to_cost": 8.68,
+  "oct_decision_by_weekday": {
+    "Garden Sat": "8:00-24:00",
+    "Garden Sun": "8:00-24:00",
+    "Uptown Fri": "8:00-24:00",
+    "Uptown Mon": "9:00-24:00",
+    "Uptown Sat": "9:00-24:00",
+    "Uptown Sun": "9:00-24:00",
+    "Uptown Thu": "8:00-24:00",
+    "Uptown Wed": "8:00-24:00"
+  },
+  "yearly_value_of_trimming": {
+    "by weekday": 1313.0,
+    "same every day": 860.0
+  },
+  "june_test": {
+    "Forecast model (trained Jan-May) | $8": {
+      "hours_cut_per_week": 24,
+      "realised_value_june": 156.29,
+      "predicted_value_june": 216.55
+    },
+    "Forecast model (trained Jan-May) | $12": {
+      "hours_cut_per_week": 51,
+      "realised_value_june": 807.3,
+      "predicted_value_june": 870.61
+    },
+    "Forecast model (trained Jan-May) | $15": {
+      "hours_cut_per_week": 68,
+      "realised_value_june": 1644.82,
+      "predicted_value_june": 1643.59
+    },
+    "Baseline: Jan-May average, no growth | $8": {
+      "hours_cut_per_week": 40,
+      "realised_value_june": 37.38,
+      "predicted_value_june": 427.58
+    },
+    "Baseline: Jan-May average, no growth | $12": {
+      "hours_cut_per_week": 68,
+      "realised_value_june": 724.68,
+      "predicted_value_june": 1352.79
+    },
+    "Baseline: Jan-May average, no growth | $15": {
+      "hours_cut_per_week": 79,
+      "realised_value_june": 1479.39,
+      "predicted_value_june": 2317.91
+    },
+    "Hindsight: June's actual averages (upper bound) | $8": {
+      "hours_cut_per_week": 29,
+      "realised_value_june": 282.79,
+      "predicted_value_june": 288.71
+    },
+    "Hindsight: June's actual averages (upper bound) | $12": {
+      "hours_cut_per_week": 56,
+      "realised_value_june": 1037.56,
+      "predicted_value_june": 1059.63
+    },
+    "Hindsight: June's actual averages (upper bound) | $15": {
+      "hours_cut_per_week": 69,
+      "realised_value_june": 1835.62,
+      "predicted_value_june": 1871.29
+    }
+  },
+  "late_night": {
+    "orders_per_10min_block": {
+      "7": [
+        118,
+        121,
+        109,
+        116,
+        145,
+        115
+      ],
+      "22": [
+        578,
+        513,
+        523,
+        553,
+        543,
+        545
+      ],
+      "23": [
+        276,
+        278,
+        254,
+        311,
+        282,
+        281
+      ]
+    },
+    "uniform_test_p_value": {
+      "7": 0.257,
+      "22": 0.435,
+      "23": 0.313
+    },
+    "last_sale_time": "23:59:56",
+    "harbour_best_pilot_nights": [
+      "Tue",
+      "Fri",
+      "Wed"
+    ],
+    "break_even_share_range": [
+      0.115,
+      0.682
+    ],
+    "yearly_value_if_midnight_hour_earns_share_of_23h": {
+      "25%": 1286.0,
+      "50%": 6884.0,
+      "75%": 14419.0
+    },
+    "harbour_only_yearly_value_if_share": {
+      "25%": 1271.0,
+      "50%": 5445.0,
+      "75%": 9624.0
+    }
+  },
+  "oct_decision_same_every_day": {
+    "Garden": "7:00-24:00",
+    "Harbour": "7:00-24:00",
+    "Uptown": "8:00-24:00"
+  }
+}

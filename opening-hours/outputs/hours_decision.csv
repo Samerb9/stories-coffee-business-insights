@@ -1,0 +1,97 @@
+branch,key,open,close,value,hours_cut_per_day,month,policy
+Garden,Fri,8,24,0.36,1,Jul,by weekday
+Garden,Mon,8,24,1.15,1,Jul,by weekday
+Garden,Sat,9,24,3.48,2,Jul,by weekday
+Garden,Sun,8,24,2.03,1,Jul,by weekday
+Garden,Thu,8,24,1.03,1,Jul,by weekday
+Garden,Tue,7,24,0.00,0,Jul,by weekday
+Garden,Wed,8,24,0.86,1,Jul,by weekday
+Harbour,Fri,7,24,0.00,0,Jul,by weekday
+Harbour,Mon,7,24,0.00,0,Jul,by weekday
+Harbour,Sat,7,24,0.00,0,Jul,by weekday
+Harbour,Sun,7,24,0.00,0,Jul,by weekday
+Harbour,Thu,7,24,0.00,0,Jul,by weekday
+Harbour,Tue,7,24,0.00,0,Jul,by weekday
+Harbour,Wed,7,24,0.00,0,Jul,by weekday
+Uptown,Fri,9,24,2.91,2,Jul,by weekday
+Uptown,Mon,9,24,4.35,2,Jul,by weekday
+Uptown,Sat,11,24,9.78,4,Jul,by weekday
+Uptown,Sun,9,24,5.79,2,Jul,by weekday
+Uptown,Thu,9,24,4.09,2,Jul,by weekday
+Uptown,Tue,7,24,0.00,0,Jul,by weekday
+Uptown,Wed,9,24,3.79,2,Jul,by weekday
+Garden,all,8,24,5.61,1,Jul,same every day
+Harbour,all,7,24,0.00,0,Jul,same every day
+Uptown,all,9,24,25.90,2,Jul,same every day
+Garden,Fri,7,24,0.00,0,Aug,by weekday
+Garden,Mon,8,24,0.57,1,Aug,by weekday
+Garden,Sat,8,24,2.61,1,Aug,by weekday
+Garden,Sun,8,24,1.49,1,Aug,by weekday
+Garden,Thu,8,24,0.40,1,Aug,by weekday
+Garden,Tue,7,24,0.00,0,Aug,by weekday
+Garden,Wed,8,24,0.23,1,Aug,by weekday
+Harbour,Fri,7,24,0.00,0,Aug,by weekday
+Harbour,Mon,7,24,0.00,0,Aug,by weekday
+Harbour,Sat,7,24,0.00,0,Aug,by weekday
+Harbour,Sun,7,24,0.00,0,Aug,by weekday
+Harbour,Thu,7,24,0.00,0,Aug,by weekday
+Harbour,Tue,7,24,0.00,0,Aug,by weekday
+Harbour,Wed,7,24,0.00,0,Aug,by weekday
+Uptown,Fri,9,24,1.78,2,Aug,by weekday
+Uptown,Mon,9,24,3.33,2,Aug,by weekday
+Uptown,Sat,11,24,7.73,4,Aug,by weekday
+Uptown,Sun,9,24,4.86,2,Aug,by weekday
+Uptown,Thu,9,24,3.02,2,Aug,by weekday
+Uptown,Tue,7,24,0.00,0,Aug,by weekday
+Uptown,Wed,9,24,2.71,2,Aug,by weekday
+Garden,all,8,24,1.22,1,Aug,same every day
+Harbour,all,7,24,0.00,0,Aug,same every day
+Uptown,all,9,24,18.40,2,Aug,same every day
+Garden,Fri,7,24,0.00,0,Sep,by weekday
+Garden,Mon,7,24,0.00,0,Sep,by weekday
+Garden,Sat,8,24,2.15,1,Sep,by weekday
+Garden,Sun,8,24,0.90,1,Sep,by weekday
+Garden,Thu,7,24,0.00,0,Sep,by weekday
+Garden,Tue,7,24,0.00,0,Sep,by weekday
+Garden,Wed,7,24,0.00,0,Sep,by weekday
+Harbour,Fri,7,24,0.00,0,Sep,by weekday
+Harbour,Mon,7,24,0.00,0,Sep,by weekday
+Harbour,Sat,7,24,0.00,0,Sep,by weekday
+Harbour,Sun,7,24,0.00,0,Sep,by weekday
+Harbour,Thu,7,24,0.00,0,Sep,by weekday
+Harbour,Tue,7,24,0.00,0,Sep,by weekday
+Harbour,Wed,7,24,0.00,0,Sep,by weekday
+Uptown,Fri,8,24,0.85,1,Sep,by weekday
+Uptown,Mon,9,24,2.20,2,Sep,by weekday
+Uptown,Sat,10,24,6.03,3,Sep,by weekday
+Uptown,Sun,9,24,3.94,2,Sep,by weekday
+Uptown,Thu,9,24,2.04,2,Sep,by weekday
+Uptown,Tue,7,24,0.00,0,Sep,by weekday
+Uptown,Wed,9,24,1.53,2,Sep,by weekday
+Garden,all,7,24,0.00,0,Sep,same every day
+Harbour,all,7,24,0.00,0,Sep,same every day
+Uptown,all,9,24,10.55,2,Sep,same every day
+Garden,Fri,7,24,0.00,0,Oct,by weekday
+Garden,Mon,7,24,0.00,0,Oct,by weekday
+Garden,Sat,8,24,1.61,1,Oct,by weekday
+Garden,Sun,8,24,0.36,1,Oct,by weekday
+Garden,Thu,7,24,0.00,0,Oct,by weekday
+Garden,Tue,7,24,0.00,0,Oct,by weekday
+Garden,Wed,7,24,0.00,0,Oct,by weekday
+Harbour,Fri,7,24,0.00,0,Oct,by weekday
+Harbour,Mon,7,24,0.00,0,Oct,by weekday
+Harbour,Sat,7,24,0.00,0,Oct,by weekday
+Harbour,Sun,7,24,0.00,0,Oct,by weekday
+Harbour,Thu,7,24,0.00,0,Oct,by weekday
+Harbour,Tue,7,24,0.00,0,Oct,by weekday
+Harbour,Wed,7,24,0.00,0,Oct,by weekday
+Uptown,Fri,8,24,0.21,1,Oct,by weekday
+Uptown,Mon,9,24,1.12,2,Oct,by weekday
+Uptown,Sat,9,24,5.12,2,Oct,by weekday
+Uptown,Sun,9,24,3.02,2,Oct,by weekday
+Uptown,Thu,8,24,0.90,1,Oct,by weekday
+Uptown,Tue,7,24,0.00,0,Oct,by weekday
+Uptown,Wed,8,24,0.64,1,Oct,by weekday
+Garden,all,7,24,0.00,0,Oct,same every day
+Harbour,all,7,24,0.00,0,Oct,same every day
+Uptown,all,8,24,4.45,1,Oct,same every day
