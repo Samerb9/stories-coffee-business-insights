@@ -19,7 +19,7 @@ Before any analysis, we checked the raw file in 20 automated tests. The full tab
   | Garden | ×0.95 | **×1.43** |
   | Uptown | ×0.91 | ×0.96 |
 
-  Garden's cost multiple is the basis of the Garden cost finding in [`../staffing-forecast`](../staffing-forecast) (report §10).
+  Garden's cost multiple is the basis of the Garden cost finding in [`ml-staffing-forecast`](../Ideas/ml-staffing-forecast) (report §10).
 - **The transaction IDs are replacement IDs (`SYN-…`).** The brief says so, and the constant multipliers suggest the data may be generated or perturbed. Each report lists this as a weak area.
 
 **What this means for our conclusions:** the numbers are clean enough to trust as recorded. The constant multipliers rule out learning price effects from this data. That's why no idea relies on price elasticity.
@@ -32,4 +32,4 @@ pip install -r requirements.txt
 python -m src.audit
 ```
 
-It reads `../data/stories_transactions.csv` and writes `outputs/`.
+It reads `data/stories_transactions.csv` at the repo root and writes `outputs/`.

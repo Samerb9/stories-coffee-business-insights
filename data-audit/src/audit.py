@@ -4,7 +4,7 @@ Writes:
   outputs/tables/audit_checks.csv        one row per check: result, pass/fail, rows affected, treatment
   outputs/tables/audit_price_cost_by_branch.csv
   outputs/tables/audit_discount_census.csv
-  outputs/audit_report.md                auto-generated summary (interpreted in ../data-audit/README.md)
+  outputs/audit_report.md                auto-generated summary (interpreted in data-audit/README.md)
 """
 import numpy as np
 import pandas as pd

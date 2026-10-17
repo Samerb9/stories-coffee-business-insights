@@ -4,7 +4,7 @@ Predicts how many receipts (visits) each branch will have in each hour,
 tests it on June 2026 and on forecasts 1-4 months ahead, and forecasts Jul-Oct 2026
 (the range the tests cover). The staffing decision built on it is in staffing.py.
 
-Run:  python forecast.py   (reads ../data/stories_transactions.csv, writes outputs/)
+Run:  python forecast.py   (reads data/stories_transactions.csv at the repo root, writes outputs/)
 """
 import argparse
 import hashlib
@@ -45,7 +45,7 @@ FIT_LOG = []   # (model, last training date) for every fit; used by the leakage 
 def find_data(arg=None):
     """The CSV lives in the shared data/ folder at the repo root (not committed)."""
     here = Path(__file__).resolve().parent
-    for p in [arg, here.parent / "data" / "stories_transactions.csv", here / "data" / "stories_transactions.csv"]:
+    for p in [arg] + [a / "data" / "stories_transactions.csv" for a in (here, *here.parents)]:
         if p and Path(p).exists():
             return Path(p)
     raise SystemExit("stories_transactions.csv not found: put it in the data/ folder at the repo root")
