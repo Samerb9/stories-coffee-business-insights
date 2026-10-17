@@ -4,7 +4,7 @@ Writes:
   outputs/tables/audit_checks.csv        one row per check: result, pass/fail, rows affected, treatment
   outputs/tables/audit_price_cost_by_branch.csv
   outputs/tables/audit_discount_census.csv
-  outputs/audit_report.md                auto-generated summary (humans interpret it in docs/01_data_audit.md)
+  outputs/audit_report.md                auto-generated summary (interpreted in ../data-audit/README.md)
 """
 import numpy as np
 import pandas as pd
@@ -67,7 +67,7 @@ def main():
     dup_rev = df.loc[dup, "rev"].sum()
     check("exact duplicate rows", dup.sum() == 0, f"{dup.sum()} duplicate rows (${dup_rev:,.0f} revenue); "
           f"genuine doubles use qty=2 ({(df.qty == 2).sum():,} lines)", dup.sum(),
-          "dropped in main analysis (D2, A10); sensitivity rerun keeps them")
+          "dropped in every analysis (treated as double scans)")
     rec.record("duplicate_rows", int(dup.sum()), "MEASURED", f"{int(dup.sum())}")
     rec.record("duplicate_revenue", float(dup_rev), "MEASURED", f"${dup_rev:,.0f}")
 
@@ -100,10 +100,10 @@ def main():
     check("daily outliers (|resid| > 3 SD after weekday+trend)", (np.abs(resid) > 3 * resid.std()).sum() == 0,
           f"residual SD {resid.std():.3f}; {(np.abs(resid) > 3 * resid.std()).sum()} outlier days")
 
-    # 10. Synthetic-data signals (neutral statement, assumption A1)
+    # 10. Synthetic-data signals (neutral statement)
     synth = df.tid.str.startswith("SYN-").mean()
     check("ID format", True, f"{synth:.0%} of IDs start with 'SYN-' (replacement IDs per brief); "
-          "constant multipliers suggest generated/perturbed data", 0, "assumption A1")
+          "constant multipliers suggest generated/perturbed data", 0, "noted as a weak area in each report")
 
     out = pd.DataFrame(checks)
     out.to_csv(TABLES / "audit_checks.csv", index=False)

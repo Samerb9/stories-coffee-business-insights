@@ -11,7 +11,7 @@ positive qty/price/cost and cost < price,True,0 rows violate,0,
 discount values,True,"[0.0, 0.1, 0.15]",0,
 quantity values,True,"{1: 48267, 2: 2910}",0,
 one date/time/branch/customer/order type per transaction,True,0 inconsistent transactions,0,
-exact duplicate rows,False,"132 duplicate rows ($741 revenue); genuine doubles use qty=2 (2,910 lines)",132,"dropped in main analysis (D2, A10); sensitivity rerun keeps them"
+exact duplicate rows,False,"132 duplicate rows ($741 revenue); genuine doubles use qty=2 (2,910 lines)",132,dropped in every analysis (treated as double scans)
 price & cost constant within product x branch,True,max std = 0.0000,0,
 Garden vs Harbour price ratio,True,mean 0.952 (range 0.951-0.953),0,
 Garden vs Harbour cost ratio,True,mean 1.430 (range 1.426-1.439),0,
@@ -19,4 +19,4 @@ Uptown vs Harbour price ratio,True,mean 0.914 (range 0.912-0.916),0,
 Uptown vs Harbour cost ratio,True,mean 0.960 (range 0.952-0.965),0,
 discount census,True,6.6% of lines discounted; see audit_discount_census.csv,0,
 daily outliers (|resid| > 3 SD after weekday+trend),True,residual SD 0.073; 0 outlier days,0,
-ID format,True,100% of IDs start with 'SYN-' (replacement IDs per brief); constant multipliers suggest generated/perturbed data,0,assumption A1
+ID format,True,100% of IDs start with 'SYN-' (replacement IDs per brief); constant multipliers suggest generated/perturbed data,0,noted as a weak area in each report

@@ -2,7 +2,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW_CSV = ROOT / "data" / "raw" / "stories_transactions.csv"
+RAW_CSV = ROOT.parent / "data" / "stories_transactions.csv"   # shared data folder at the repo root
 PROCESSED = ROOT / "data" / "processed"
 LINES_CSV = PROCESSED / "lines.csv"            # one row per product line (deduplicated)
 TX_CSV = PROCESSED / "transactions.csv"        # one row per receipt
@@ -33,5 +33,5 @@ COLUMNS = {
     "Line Gross Profit (USD)": "gp",
 }
 
-for p in (PROCESSED, TABLES, FIGURES, NUMBERS_DIR):
+for p in (TABLES, NUMBERS_DIR):
     p.mkdir(parents=True, exist_ok=True)

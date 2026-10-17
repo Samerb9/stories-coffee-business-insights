@@ -14,7 +14,7 @@ Transaction data analysis for the EECE490 Stories Coffee Hackathon, exploring pr
 | 1b | Garden's cost anomaly | Check one month of Garden supplier invoices | ~$32k/year, or a cost-allocation error hiding ~16 margin points | [`staffing-forecast/`](staffing-forecast/) (§10 of the report) |
 | 2 | Opening hours | Keep evening hours; pilot staying open until 01:00 at Harbour on Tue/Wed/Fri; Uptown can open at 8:00 | ~$1.3k/year from mornings; $1.3k–9.6k/year if the late hour works | [`opening-hours/`](opening-hours/) |
 
-All ideas share one tested forecast of customers per branch per hour. It's accurate to 3–4% on weekly totals up to 4 months ahead, on months the model never saw.
+All ideas start from a [data audit](data-audit/) (21 checks) and share one tested forecast of customers per branch per hour. It's accurate to 3–4% on weekly totals up to 4 months ahead, on months the model never saw.
 
 ## Conclusion: Idea 1 (staffing)
 
@@ -34,6 +34,22 @@ Every dollar figure rests on stated assumptions. Each idea's report shows which 
 
 | Folder | Contents |
 |---|---|
+| [`data-audit/`](data-audit/) | 21 automated data-quality checks run before any analysis |
 | [`staffing-forecast/`](staffing-forecast/) | Hourly customer forecast (shared by all ideas), staffing decision, Garden cost finding, browser app |
 | [`opening-hours/`](opening-hours/) | Opening and closing hours decision, tested on June, plus a late-night pilot design |
-| [`stories-hackathon-starter/`](stories-hackathon-starter/) | Project plan and analysis scaffold |
+| [`data/`](data/) | Where to put `stories_transactions.csv` (not committed) |
+
+## Reproduce
+
+Put `stories_transactions.csv` in `data/`, then run:
+
+```bash
+pip install -r staffing-forecast/requirements.txt
+cd data-audit && python -m src.audit && cd ..
+python staffing-forecast/forecast.py
+python staffing-forecast/staffing.py
+python staffing-forecast/cost_check.py
+python opening-hours/hours.py
+```
+
+Everything runs in under a minute. Open `staffing-forecast/app/index.html` in a browser to explore the forecast.

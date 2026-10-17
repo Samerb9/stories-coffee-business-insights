@@ -320,7 +320,7 @@ function renderWeek() {
   $("weekTitle").textContent = `${state.branch} · week of ${fmtDate(days[0])}`;
 }
 
-// June test recomputed in the browser from model_test.json + hourly_actuals.csv
+// June test recomputed in the browser from the Jan-May model and the actual June counts (app_data.js)
 function renderJuneTest() {
   let absErr = 0, act = 0, n = 0;
   const weekly = new Map(), daily = new Map();
