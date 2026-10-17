@@ -24,7 +24,7 @@ python forecast.py      # clean, model, tests, Jul-Oct forecast (~20 s)
 python staffing.py      # rota, costs, value, sensitivity (~5 s)
 ```
 
-Put the hackathon file `stories_transactions.csv` in the repo's top-level [`data/`](../../data/) folder first. Every output goes to `outputs/`.
+The data is read from the repo's top-level [`data/`](../../data/) folder. Every output goes to `outputs/`.
 
 ## Try it in the browser
 
