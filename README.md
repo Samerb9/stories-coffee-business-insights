@@ -46,11 +46,11 @@ Every dollar figure rests on stated assumptions. Each idea's report shows which 
 | [`Ideas/3-opening-hours/`](Ideas/3-opening-hours/) | Idea 3: opening and closing hours, tested on June, plus a late-night pilot design |
 | [`Ideas/4-item-mix-planning/`](Ideas/4-item-mix-planning/) | Idea 4: item-mix trends within each category and the best planning rule, tested on June |
 | [`data-audit/`](data-audit/) | 20 automated data-quality checks run before any analysis |
-| [`data/`](data/) | Where to put `stories_transactions.csv` (not committed) |
+| [`data/`](data/) | The hackathon dataset, `stories_transactions.csv` |
 
 ## Reproduce
 
-Put `stories_transactions.csv` in `data/`, then run:
+The data is included in `data/`. Run:
 
 ```bash
 pip install -r Ideas/1-ml-staffing-forecast/requirements.txt
