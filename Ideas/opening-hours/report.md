@@ -96,14 +96,12 @@ From `hours_sensitivity.csv`:
 | $20 | 0% | $30,220 | + Harbour 9:00, Garden 11:00 on weak days |
 | $8 | 25% | $3,298 | + Garden 9:00, Uptown 10–11:00 on weak days |
 | $8 | 50% | $8,274 | wider morning and late-evening cuts |
-| $8, Garden at Harbour's costs | 0% | $1,097 | Garden's weekend mornings become worth keeping |
 
 **What changes the decision:**
 - **The running cost per hour, most of all.** At $4 nothing changes, and at $6 almost nothing does. Closing any evening hour only makes sense above about $12.
 - **Whether customers come at another hour when one is closed.** If half of them do, trimming is worth about 6× more.
-- **Garden's cost-recording issue** (see `../ml-staffing-forecast`). Corrected, Garden earns more per customer and keeps its weekend mornings.
 
-Stories can measure all three cheaply (§7).
+Stories can measure both cheaply (§7).
 
 ## 5. After midnight: no data, so no model [MEASURED evidence + SCENARIO values]
 
@@ -166,7 +164,6 @@ At Garden and Uptown, the extension only pays if the midnight hour earns more th
 
   If that continues, even Uptown's 07:00 hour pays for itself within months. Recheck monthly.
 - **The model gives every weekday the same daily shape.** The raw data hints that Uptown's 23:00 hour is weaker Thursday–Sunday ($7–9 a night) than Monday–Wednesday ($13–14). The model doesn't capture that, because per-weekday shapes predicted worse in testing.
-- **Profit per customer uses recorded costs.** Garden's are probably overstated (see `../ml-staffing-forecast`).
 - **The values are small** next to Stories' roughly $361k yearly gross profit **[MEASURED, annualised]**. This idea is mainly about not making a costly mistake (closing earlier) and testing one upside (staying open later).
 
 ## 9. Approaches rejected
@@ -195,7 +192,7 @@ The data file is read from the repo's top-level `data/` folder. The run takes ab
 | `hours_break_even.csv` | expected profit per edge hour by branch, month and weekday = break-even running cost |
 | `hours_decision.csv` | chosen hours per branch, weekday and month, with yearly value |
 | `hours_june_test.csv` | out-of-sample test of the decision against the baseline and hindsight |
-| `hours_sensitivity.csv` | decision under each running cost, customer-shift share and Garden cost variant |
+| `hours_sensitivity.csv` | decision under each running cost and customer-shift share |
 | `hours_late_night.csv` | 23:00 profit, break-even shares and scenarios for staying open later |
 | `hours_numbers.json` | every key number in this report |
 | `chart_hours_october.png` | profit per open hour, October |

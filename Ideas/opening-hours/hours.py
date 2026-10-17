@@ -43,16 +43,9 @@ def find_data(arg):
     sys.exit("stories_transactions.csv not found: put it in the data/ folder at the repo root or pass --data")
 
 
-def receipts_with_gp(path, garden_cost_fix=False):
-    """One row per receipt: branch, date, hour, gross profit. Optionally re-cost Garden at
-    Harbour's unit costs (see ml-staffing-forecast/cost_check.py)."""
+def receipts_with_gp(path):
+    """One row per receipt: branch, date, hour, gross profit."""
     d = pd.read_csv(path).drop_duplicates()
-    if garden_cost_fix:
-        ratio = (d[d.Branch == "Garden"].groupby("Product")["Unit Cost (USD)"].first() /
-                 d[d.Branch == "Harbour"].groupby("Product")["Unit Cost (USD)"].first())
-        g = d.Branch == "Garden"
-        new_cost = d.loc[g, "Unit Cost (USD)"] / d.loc[g, "Product"].map(ratio)
-        d.loc[g, "Line Gross Profit (USD)"] = d.loc[g, "Line Revenue (USD)"] - new_cost * d.loc[g, "Quantity"]
     r = d.groupby(["Transaction ID", "Branch", "Date", "Time"])["Line Gross Profit (USD)"].sum().reset_index()
     r["date"] = pd.to_datetime(r.Date)
     r["hour"] = r.Time.str[:2].astype(int)
@@ -137,12 +130,8 @@ def main():
     yearly = {p: round(float(weekly.loc[p].mean() * 52), 0) for p in ["by weekday", "same every day"]}
 
     # ---------------- sensitivity: which assumptions change the decision?
-    r_fix = receipts_with_gp(data, garden_cost_fix=True)
-    gp_fix = gp_per_receipt(r_fix)
-    heat_fix = heat.assign(gp=heat.estimate_mean.values *
-                           gp_fix.reindex(pd.MultiIndex.from_frame(heat[["branch", "hour"]])).values)
     sens = []
-    for variant, hh in [("recorded costs", heat), ("Garden at Harbour's costs", heat_fix)]:
+    for variant, hh in [("recorded costs", heat)]:
         for cost in [4, 6, 8, 10, 12, 15, 20]:
             for shift in [0.0, 0.25, 0.5]:
                 vals, cut_hours, lines = [], [], []

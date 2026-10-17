@@ -10,8 +10,6 @@ Stories' customer flow is very predictable. Our model forecasts each branch's we
 
 A rota built from the forecast needs **389 staff-hours a week in October**, against 714 for two people on every shift. That's worth about **$67k a year** at $4 an hour while losing under 1% of customers to queues, provided one person may run a quiet hour. If two people must always be present, the saving disappears, and the forecast's value is timing Harbour's extra evening staff.
 
-Separately, Garden's recorded unit costs are exactly **1.43× Harbour's on all 45 products**, even bottled water. Either Garden overpays about **$32k a year**, or a cost-allocation error understates its margin (47% recorded, about 63% at Harbour's costs). One month of supplier invoices would tell which.
-
 Every dollar figure rests on stated assumptions; [forecast_report.md](forecast_report.md) shows which ones change the decision, and a practical test Stories can run first.
 
 ![October rota](outputs/chart3_staffing_october.png)
@@ -24,7 +22,6 @@ Every dollar figure rests on stated assumptions; [forecast_report.md](forecast_r
 pip install -r requirements.txt
 python forecast.py      # clean, model, tests, Jul-Oct forecast (~20 s)
 python staffing.py      # rota, costs, value, sensitivity (~5 s)
-python cost_check.py    # Garden cost finding (~2 s)
 ```
 
 Put the hackathon file `stories_transactions.csv` in the repo's top-level [`data/`](../../data/) folder first. Every output goes to `outputs/`.
