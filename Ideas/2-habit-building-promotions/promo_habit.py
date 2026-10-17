@@ -1,4 +1,4 @@
-"""Idea 4: did Harbour's 15% promotion build a lasting habit?
+"""Idea 2: did Harbour's 15% promotion build a lasting habit?
 
 Harbour ran 15% off 9 cold coffee and dessert items for a week in March and again in May.
 Compare Harbour with Garden and Uptown on the same days, before (Jan 1 - Mar 11) and after

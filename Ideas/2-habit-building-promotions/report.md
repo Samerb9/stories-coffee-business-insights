@@ -85,7 +85,7 @@ Every method's estimate beats the **$471** discount. The main estimate was still
 ## 7. Reproduce
 
 ```bash
-cd promotion-habit
+cd Ideas/2-habit-building-promotions
 python promo_habit.py
 ```
 

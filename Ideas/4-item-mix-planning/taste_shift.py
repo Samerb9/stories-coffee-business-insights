@@ -1,4 +1,4 @@
-"""Idea 3: are customers' tastes shifting, and how should each branch plan its item mix?
+"""Idea 4: are customers' tastes shifting, and how should each branch plan its item mix?
 
 Within each category (e.g. Matcha & Tea), which items do customers pick, and does that change?
 1. Trend test for every item's share of its category, at monthly and daily level, with the
