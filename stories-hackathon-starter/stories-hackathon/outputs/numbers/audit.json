@@ -1,0 +1,23 @@
+{
+  "anon_line_share": {
+    "value": 0.36522265861617526,
+    "tag": "MEASURED",
+    "display": "36.5%",
+    "note": "",
+    "source": "src/audit.py"
+  },
+  "duplicate_rows": {
+    "value": 132,
+    "tag": "MEASURED",
+    "display": "132",
+    "note": "",
+    "source": "src/audit.py"
+  },
+  "duplicate_revenue": {
+    "value": 741.4299999999998,
+    "tag": "MEASURED",
+    "display": "$741",
+    "note": "",
+    "source": "src/audit.py"
+  }
+}
