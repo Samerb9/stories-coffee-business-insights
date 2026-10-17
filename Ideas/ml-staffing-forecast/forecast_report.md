@@ -1,4 +1,4 @@
-# Staffing Stories to demand: an hourly customer forecast
+# ML staffing forecast: staffing Stories to predicted demand
 
 Every number below comes from a file in `outputs/`.
 **[MEASURED]** means computed from the data, including all tests on data the model never saw.

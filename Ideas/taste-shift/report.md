@@ -71,13 +71,13 @@ So if a branch boosts prep for an item because it sold well last month, it will 
 
 - **The shift in tastes is not a profit story.** The rising items earn about the same profit per unit as those they replace. Moving from January's mix to June's, at June volumes, is worth about **−$60 a month** **[ESTIMATED]**.
 - **The value is in planning accuracy.** In June the steady-mix rule mis-planned **240 fewer units** than copying last month. If each mis-planned unit wasted its average cost ($2.34), that's at most about **$6.7k a year** **[ESTIMATED, upper bound]**. The real figure is lower, because not every planning error becomes waste.
-- **The limit:** branches plan prep **daily**, and at the daily level chance dominates. The error is about **44%** whichever rule is used **[MEASURED]**. The steady mix fixes each item's *share*; branches still need buffers for day-to-day swings. Our visit forecast in [`../staffing-forecast`](../staffing-forecast) can size the daily total.
+- **The limit:** branches plan prep **daily**, and at the daily level chance dominates. The error is about **44%** whichever rule is used **[MEASURED]**. The steady mix fixes each item's *share*; branches still need buffers for day-to-day swings. Our visit forecast in [`../ml-staffing-forecast`](../ml-staffing-forecast) can size the daily total.
 
 ## 6. Assumptions, alternative explanations and weak areas
 
 - **Assumption:** a mis-planned unit costs at most its ingredient cost. Real waste and stock-out costs aren't in the data.
 - **Seasonality:** six months is short for taste trends. Some moves could be seasonal; Iced Matcha falling into summer would be surprising, which points to taste rather than weather. The data can't separate the two.
-- **Who changed?** Customer IDs carry no usable signal (see [`../data-audit`](../data-audit)), so we can't tell whether the same people changed their order or new customers prefer different items.
+- **Who changed?** Customer IDs carry no usable signal (see [`../../data-audit`](../../data-audit)), so we can't tell whether the same people changed their order or new customers prefer different items.
 - **Correlation, not cause:** a rising share doesn't show *why*. Menu placement, staff suggestions or stock-outs of a rival item could all move shares.
 
 ## 7. A test Stories can run

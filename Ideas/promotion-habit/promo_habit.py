@@ -6,7 +6,7 @@ Compare Harbour with Garden and Uptown on the same days, before (Jan 1 - Mar 11)
 effects. Then check it against chance (fake start dates, random item sets), against each
 control branch alone, and within each branch (promoted vs other items).
 
-Run:  python promo_habit.py   (reads ../data/stories_transactions.csv, writes outputs/)
+Run:  python promo_habit.py   (reads data/stories_transactions.csv at the repo root, writes outputs/)
 """
 import argparse
 import json
@@ -29,7 +29,7 @@ SOURCE = "Source: Stories POS receipts, Jan-Jun 2026; team analysis."
 
 
 def find_data(arg=None):
-    for p in [arg, HERE.parent / "data" / "stories_transactions.csv", HERE / "data" / "stories_transactions.csv"]:
+    for p in [arg] + [a / "data" / "stories_transactions.csv" for a in (HERE, *HERE.parents)]:
         if p and Path(p).exists():
             return Path(p)
     raise SystemExit("stories_transactions.csv not found: put it in the data/ folder at the repo root")
