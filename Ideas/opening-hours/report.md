@@ -28,7 +28,7 @@ Stories opens all three branches 07:00–24:00 every day. Each open hour costs m
 1. **Profit per customer, by branch and hour [MEASURED]:**
    - it hardly changes through the day: Garden $4.04–4.36, Harbour $5.63–6.22, Uptown $4.93–5.73 (`hours_gp_per_receipt.csv`);
    - so an hour's value is essentially its number of customers × the branch's profit per customer.
-2. **Customers per hour, July–October [ESTIMATED]:** from the visit forecast in [`../staffing-forecast`](../staffing-forecast). It's accurate to 3–4% on weekly totals up to 4 months ahead in tests.
+2. **Customers per hour, July–October [ESTIMATED]:** from the visit forecast in [`../ml-staffing-forecast`](../ml-staffing-forecast). It's accurate to 3–4% on weekly totals up to 4 months ahead in tests.
 3. **Expected profit per open hour** = forecast customers × profit per customer, for every branch × weekday × hour × month (`hours_break_even.csv`). This is also each hour's **break-even running cost**: close the hour only if an open hour costs more than this.
 4. **Decision:**
    - For each branch and weekday, choose the opening time (7–11) and closing time (22–24) that maximise profit minus running cost.
@@ -101,7 +101,7 @@ From `hours_sensitivity.csv`:
 **What changes the decision:**
 - **The running cost per hour, most of all.** At $4 nothing changes, and at $6 almost nothing does. Closing any evening hour only makes sense above about $12.
 - **Whether customers come at another hour when one is closed.** If half of them do, trimming is worth about 6× more.
-- **Garden's cost-recording issue** (see `../staffing-forecast`). Corrected, Garden earns more per customer and keeps its weekend mornings.
+- **Garden's cost-recording issue** (see `../ml-staffing-forecast`). Corrected, Garden earns more per customer and keeps its weekend mornings.
 
 Stories can measure all three cheaply (§7).
 
@@ -161,12 +161,12 @@ At Garden and Uptown, the extension only pays if the midnight hour earns more th
 
 - **No data after midnight.** The late-night value is a scenario until the pilot runs.
 - **Morning growth may be faster than forecast:**
-  - in past tests the visit model under-predicted daytime hours by about 2% (see `../staffing-forecast`);
+  - in past tests the visit model under-predicted daytime hours by about 2% (see `../ml-staffing-forecast`);
   - profit per day in the 07:00 hour roughly doubled from January to June **[MEASURED]**: Harbour $7.87 → $15.49, Garden $3.81 → $6.80, Uptown $3.53 → $6.41.
 
   If that continues, even Uptown's 07:00 hour pays for itself within months. Recheck monthly.
 - **The model gives every weekday the same daily shape.** The raw data hints that Uptown's 23:00 hour is weaker Thursday–Sunday ($7–9 a night) than Monday–Wednesday ($13–14). The model doesn't capture that, because per-weekday shapes predicted worse in testing.
-- **Profit per customer uses recorded costs.** Garden's are probably overstated (see `../staffing-forecast`).
+- **Profit per customer uses recorded costs.** Garden's are probably overstated (see `../ml-staffing-forecast`).
 - **The values are small** next to Stories' roughly $361k yearly gross profit **[MEASURED, annualised]**. This idea is mainly about not making a costly mistake (closing earlier) and testing one upside (staying open later).
 
 ## 9. Approaches rejected
@@ -180,7 +180,7 @@ At Garden and Uptown, the extension only pays if the midnight hour earns more th
 
 ## 10. Reproduce
 
-Run [`../staffing-forecast`](../staffing-forecast) first, because this idea uses its forecast. Then:
+Run [`../ml-staffing-forecast`](../ml-staffing-forecast) first, because this idea uses its forecast. Then:
 
 ```bash
 cd opening-hours

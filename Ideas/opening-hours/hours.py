@@ -2,7 +2,7 @@
 
 For every branch, weekday and edge hour (07-11 and 22-24), compare the gross profit the hour
 brings in with what it costs to keep the branch open that hour. Uses the visit forecast from
-../staffing-forecast (run that first). The decision is tested on June: decide with the Jan-May
+../ml-staffing-forecast (run that first). The decision is tested on June: decide with the Jan-May
 model, then score the decision on June's real profit, against a plain-average baseline.
 After midnight there is no data, so no model: measured evidence, break-even and a pilot.
 
@@ -21,7 +21,7 @@ import pandas as pd
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
-FORECAST_DIR = HERE.parent / "staffing-forecast"
+FORECAST_DIR = HERE.parent / "ml-staffing-forecast"
 sys.path.insert(0, str(FORECAST_DIR))
 from forecast import BRANCHES, DOW, HOURS, START, design, load_and_clean, build_hourly_table  # noqa: E402
 
@@ -37,7 +37,7 @@ SOURCE = ("Source: Stories POS receipts Jan-Jun 2026; visit forecast Jul-Oct. As
 
 
 def find_data(arg):
-    for p in [arg, HERE.parent / "data/stories_transactions.csv", HERE / "data/stories_transactions.csv"]:
+    for p in [arg] + [a / "data" / "stories_transactions.csv" for a in (HERE, *HERE.parents)]:
         if p and Path(p).exists():
             return Path(p)
     sys.exit("stories_transactions.csv not found: put it in the data/ folder at the repo root or pass --data")
@@ -45,7 +45,7 @@ def find_data(arg):
 
 def receipts_with_gp(path, garden_cost_fix=False):
     """One row per receipt: branch, date, hour, gross profit. Optionally re-cost Garden at
-    Harbour's unit costs (see staffing-forecast/cost_check.py)."""
+    Harbour's unit costs (see ml-staffing-forecast/cost_check.py)."""
     d = pd.read_csv(path).drop_duplicates()
     if garden_cost_fix:
         ratio = (d[d.Branch == "Garden"].groupby("Product")["Unit Cost (USD)"].first() /

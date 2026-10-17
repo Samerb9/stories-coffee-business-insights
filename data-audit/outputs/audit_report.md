@@ -14,12 +14,11 @@
 | 10 | discount values | ✅ | [0.0, 0.1, 0.15] | 0 |  |
 | 11 | quantity values | ✅ | {1: 48267, 2: 2910} | 0 |  |
 | 12 | one date/time/branch/customer/order type per transaction | ✅ | 0 inconsistent transactions | 0 |  |
-| 13 | exact duplicate rows | ⚠️ | 132 duplicate rows ($741 revenue); genuine doubles use qty=2 (2,910 lines) | 132 | dropped in every analysis (treated as double scans) |
-| 14 | price & cost constant within product x branch | ✅ | max std = 0.0000 | 0 |  |
-| 15 | Garden vs Harbour price ratio | ✅ | mean 0.952 (range 0.951-0.953) | 0 |  |
-| 16 | Garden vs Harbour cost ratio | ✅ | mean 1.430 (range 1.426-1.439) | 0 |  |
-| 17 | Uptown vs Harbour price ratio | ✅ | mean 0.914 (range 0.912-0.916) | 0 |  |
-| 18 | Uptown vs Harbour cost ratio | ✅ | mean 0.960 (range 0.952-0.965) | 0 |  |
-| 19 | discount census | ✅ | 6.6% of lines discounted; see audit_discount_census.csv | 0 |  |
-| 20 | daily outliers (|resid| > 3 SD after weekday+trend) | ✅ | residual SD 0.073; 0 outlier days | 0 |  |
-| 21 | ID format | ✅ | 100% of IDs start with 'SYN-' (replacement IDs per brief); constant multipliers suggest generated/perturbed data | 0 | noted as a weak area in each report |
+| 13 | price & cost constant within product x branch | ✅ | max std = 0.0000 | 0 |  |
+| 14 | Garden vs Harbour price ratio | ✅ | mean 0.952 (range 0.951-0.953) | 0 |  |
+| 15 | Garden vs Harbour cost ratio | ✅ | mean 1.430 (range 1.426-1.439) | 0 |  |
+| 16 | Uptown vs Harbour price ratio | ✅ | mean 0.914 (range 0.912-0.916) | 0 |  |
+| 17 | Uptown vs Harbour cost ratio | ✅ | mean 0.960 (range 0.952-0.965) | 0 |  |
+| 18 | discount census | ✅ | 6.6% of lines discounted; see audit_discount_census.csv | 0 |  |
+| 19 | daily outliers (|resid| > 3 SD after weekday+trend) | ✅ | residual SD 0.073; 0 outlier days | 0 |  |
+| 20 | ID format | ✅ | 100% of IDs start with 'SYN-' (replacement IDs per brief); constant multipliers suggest generated/perturbed data | 0 | noted as a weak area in each report |

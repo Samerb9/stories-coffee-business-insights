@@ -16,7 +16,7 @@ Tested on June, a month it never saw: hours chosen with our forecast delivered *
 
 ## Run
 
-Run [`../staffing-forecast`](../staffing-forecast) first (this idea uses its forecast), then:
+Run [`../ml-staffing-forecast`](../ml-staffing-forecast) first (this idea uses its forecast), then:
 
 ```bash
 python hours.py

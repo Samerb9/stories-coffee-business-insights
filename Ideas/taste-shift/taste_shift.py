@@ -6,7 +6,7 @@ Within each category (e.g. Matcha & Tea), which items do customers pick, and doe
 2. Do month-to-month swings persist or reverse?
 3. June test: plan each item's June share with 4 rules using only Jan-May data, score on June.
 
-Run:  python taste_shift.py   (reads ../data/stories_transactions.csv, writes outputs/)
+Run:  python taste_shift.py   (reads data/stories_transactions.csv at the repo root, writes outputs/)
 """
 import argparse
 import json
@@ -23,11 +23,11 @@ from statsmodels.stats.multitest import multipletests
 SEED = 490
 HERE = Path(__file__).resolve().parent
 ACCENT, GREY, GREEN = "#C0392B", "#7F7F7F", "#1E8449"
-SOURCE = "Source: Stories POS receipts, Jan-Jun 2026 (132 duplicate lines removed); team analysis."
+SOURCE = "Source: Stories POS receipts, Jan-Jun 2026; team analysis."
 
 
 def find_data(arg=None):
-    for p in [arg, HERE.parent / "data" / "stories_transactions.csv", HERE / "data" / "stories_transactions.csv"]:
+    for p in [arg] + [a / "data" / "stories_transactions.csv" for a in (HERE, *HERE.parents)]:
         if p and Path(p).exists():
             return Path(p)
     raise SystemExit("stories_transactions.csv not found: put it in the data/ folder at the repo root")

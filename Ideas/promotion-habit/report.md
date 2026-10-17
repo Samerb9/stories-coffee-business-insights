@@ -62,7 +62,7 @@ Every method's estimate beats the **$471** discount. The main estimate was still
 **Assumptions:**
 - No other marketing ran at Harbour from March onwards.
 - No local change, such as a new competitor near Uptown, explains Uptown's drop.
-- We can't confirm that the *same* customers kept returning, because customer IDs carry no usable signal (see [`../data-audit`](../data-audit)).
+- We can't confirm that the *same* customers kept returning, because customer IDs carry no usable signal (see [`../../data-audit`](../../data-audit)).
 
 **Correlation, not cause:** the lift follows the promotion in time, and the placebo checks make chance unlikely. But only a randomised test can show that the promotion *caused* it.
 
