@@ -1,4 +1,4 @@
-# Idea 3: Plan item prep from a steady mix, not last month
+# Idea 4: Plan item prep from a steady mix, not last month
 
 **Team:** Christopher Ferzli, Samer Bannout
 

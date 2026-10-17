@@ -1,8 +1,8 @@
-"""Idea 2: are Stories' opening hours right?
+"""Idea 3: are Stories' opening hours right?
 
 For every branch, weekday and edge hour (07-11 and 22-24), compare the gross profit the hour
 brings in with what it costs to keep the branch open that hour. Uses the visit forecast from
-../ml-staffing-forecast (run that first). The decision is tested on June: decide with the Jan-May
+../1-ml-staffing-forecast (run that first). The decision is tested on June: decide with the Jan-May
 model, then score the decision on June's real profit, against a plain-average baseline.
 After midnight there is no data, so no model: measured evidence, break-even and a pilot.
 
@@ -21,7 +21,7 @@ import pandas as pd
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
-FORECAST_DIR = HERE.parent / "ml-staffing-forecast"
+FORECAST_DIR = HERE.parent / "1-ml-staffing-forecast"
 sys.path.insert(0, str(FORECAST_DIR))
 from forecast import BRANCHES, DOW, HOURS, START, design, load_and_clean, build_hourly_table  # noqa: E402
 

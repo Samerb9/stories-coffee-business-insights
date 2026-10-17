@@ -8,7 +8,7 @@ Every number comes from `outputs/hours_numbers.json` or the CSVs next to it, pro
 
 ## Conclusion
 
-**Don't close any branch earlier, but do test staying open later at Harbour.** Profit per customer is the same at every hour **[MEASURED]**, so an hour is worth keeping when it brings enough customers. With the visit forecast for October, every evening hour earns **1.5–22× the ~$8 it costs to stay open**. Only 11 of 357 branch-hours a week fall below that cost, all before 9am at Uptown and on Garden's weekend mornings **[ESTIMATED]**. Opening Uptown at 8:00 instead of 7:00 saves less than about **$1.3k a year**. It's worth doing only if an open hour really costs $10 or more.
+**Don't close any branch earlier, but do test staying open later at Harbour.** Profit per customer is the same at every hour **[MEASURED]**, so an hour is worth keeping when it brings enough customers. With the visit forecast for October, every evening hour earns **1.5–22× the roughly $8 it costs to stay open**. Only 11 of 357 branch-hours a week fall below that cost, all before 9am at Uptown and on Garden's weekend mornings **[ESTIMATED]**. Opening Uptown at 8:00 instead of 7:00 saves less than about **$1.3k a year**. It's worth doing only if an open hour really costs $10 or more.
 
 The bigger opportunity is at the other end of the day. Orders don't slow down before midnight: they are flat in every 10-minute block through 23:59 **[MEASURED]**. Staying open until 01:00 at Harbour pays off if the extra hour brings just **12–25% of the 11pm hour's profit**, worth roughly **$1.3k–9.6k a year at Harbour [SCENARIO]**. No data exists after midnight, so no model can predict that hour. A 6-week pilot on Harbour's three strongest nights (Tuesday, Wednesday, Friday) is the only way to find out.
 
@@ -28,13 +28,13 @@ Stories opens all three branches 07:00–24:00 every day. Each open hour costs m
 1. **Profit per customer, by branch and hour [MEASURED]:**
    - it hardly changes through the day: Garden $4.04–4.36, Harbour $5.63–6.22, Uptown $4.93–5.73 (`hours_gp_per_receipt.csv`);
    - so an hour's value is essentially its number of customers × the branch's profit per customer.
-2. **Customers per hour, July–October [ESTIMATED]:** from the visit forecast in [`../ml-staffing-forecast`](../ml-staffing-forecast). It's accurate to 3–4% on weekly totals up to 4 months ahead in tests.
+2. **Customers per hour, July–October [ESTIMATED]:** from the visit forecast in [`../1-ml-staffing-forecast`](../1-ml-staffing-forecast). It's accurate to 3–4% on weekly totals up to 4 months ahead in tests.
 3. **Expected profit per open hour** = forecast customers × profit per customer, for every branch × weekday × hour × month (`hours_break_even.csv`). This is also each hour's **break-even running cost**: close the hour only if an open hour costs more than this.
 4. **Decision:**
    - For each branch and weekday, choose the opening time (7–11) and closing time (22–24) that maximise profit minus running cost.
    - It's done two ways: hours set per weekday, or the same hours every day (simpler to run).
 5. **Assumptions:**
-   - An open hour costs **$8**: one staff-hour (~$4) plus power and generator (~$4). Rent is paid anyway, so it isn't counted.
+   - An open hour costs **$8**: one staff-hour (about $4) plus power and generator (about $4). Rent is paid anyway, so it isn't counted.
    - Customers of a closed hour are **lost**, none come at another time. This is the conservative choice for closing.
 
 ## 3. Results [ESTIMATED unless marked]
@@ -159,7 +159,7 @@ At Garden and Uptown, the extension only pays if the midnight hour earns more th
 
 - **No data after midnight.** The late-night value is a scenario until the pilot runs.
 - **Morning growth may be faster than forecast:**
-  - in past tests the visit model under-predicted daytime hours by about 2% (see `../ml-staffing-forecast`);
+  - in past tests the visit model under-predicted daytime hours by about 2% (see `../1-ml-staffing-forecast`);
   - profit per day in the 07:00 hour roughly doubled from January to June **[MEASURED]**: Harbour $7.87 → $15.49, Garden $3.81 → $6.80, Uptown $3.53 → $6.41.
 
   If that continues, even Uptown's 07:00 hour pays for itself within months. Recheck monthly.
@@ -177,10 +177,10 @@ At Garden and Uptown, the extension only pays if the midnight hour earns more th
 
 ## 10. Reproduce
 
-Run [`../ml-staffing-forecast`](../ml-staffing-forecast) first, because this idea uses its forecast. Then:
+Run [`../1-ml-staffing-forecast`](../1-ml-staffing-forecast) first, because this idea uses its forecast. Then:
 
 ```bash
-cd opening-hours
+cd Ideas/3-opening-hours
 python hours.py
 ```
 
